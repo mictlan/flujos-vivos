@@ -1,0 +1,11 @@
+#!/bin/sh -e
+# rc.local
+# This script is executed at the end of each multiuser runlevel.
+
+# Detect partitions (non-swap) and mount them
+# See /sbin/diskmounter.sh for supported filesystems
+/sbin/diskmounter.sh -r
+
+/usr/bin/jack_plumbing start
+
+exit 0

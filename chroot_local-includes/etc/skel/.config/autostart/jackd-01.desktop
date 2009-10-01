@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Jackd
+Comment=Jack Audio Conection Kit
+Icon=audacity
+Type=Application
+Categories=Audio;
+Exec=jack.sh
+StartupNotify=false
+Terminal=false
+MimeType=audio/basic;

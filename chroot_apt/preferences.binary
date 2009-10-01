@@ -1,0 +1,16 @@
+Package: *
+Pin: release a=stable
+Pin-Priority: 700
+
+Package: *
+Pin: release a=unstable
+Pin-Priority: 500
+
+Package: squashfs-tools
+Pin: version 1:4.0-1
+Pin-Priority: 750
+
+Package: aufs-tools
+Pin: version 0+20090302-2.1
+Pin-Priority: 750
+

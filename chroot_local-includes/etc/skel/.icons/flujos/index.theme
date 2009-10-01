@@ -1,0 +1,29 @@
+# Flujos vector icon theme
+# (c) 2009 flujos.org
+
+[Icon Theme]
+Name=Flujos
+Name[es]=Flujos
+Inherits=gnome
+Directories=scalable/actions,scalable/apps,scalable/places
+
+[scalable/actions]
+MinSize=1
+Size=48
+MaxSize=256
+Context=Actions
+Type=scalable
+
+[scalable/apps]
+MinSize=1
+Size=48
+MaxSize=256
+Context=Applications
+Type=scalable
+
+[scalable/places]
+MinSize=1
+Size=48
+MaxSize=256
+Context=Places
+Type=Scalable

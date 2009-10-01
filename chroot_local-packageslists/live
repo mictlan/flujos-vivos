@@ -1,0 +1,13 @@
+# /usr/share/live-helper/lists/flujos - package list for live-helper(7)
+
+## LH: Flujos.org (Xfce)
+
+kernel-package 
+approx 
+live-helper
+dpatch 
+fakeroot
+qemu 
+kqemu-common 
+kqemu-source 
+patchutils

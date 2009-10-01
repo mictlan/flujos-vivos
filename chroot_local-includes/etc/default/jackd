@@ -1,0 +1,11 @@
+# Set to "yes" to start jackd at boot
+START_DAEMON=yes
+
+# The jackd process will run under this user
+USER=radio
+
+# Options to pass to jackd
+OPTIONS="-R -d alsa -d hw -r44100"
+#OPTIONS="-dalsa -dhw:0 -r44100 -p1024 -n2"
+#OPTIONS="-R -d alsa -d hw"
+

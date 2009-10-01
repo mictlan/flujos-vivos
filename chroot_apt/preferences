@@ -1,0 +1,31 @@
+Package: *
+Pin: release a=stable
+Pin-Priority: 700
+
+Package: *
+Pin: release a=unstable
+Pin-Priority: 500
+
+Package: aufs-tools
+Pin: version 0+2009*
+Pin-Priority: 999 
+
+Package: squashfs-tools
+Pin: version 1:4.0* 
+Pin-Priority: 999 
+
+Package: syslinux 
+Pin: release a=unstable
+Pin-Priority: 750
+
+Package: syslinux-common
+Pin: release a=unstable
+Pin-Priority: 750
+
+Package: *
+Pin: release a=lenny-backports
+Pin-Priority: 500
+
+Package: *
+Pin: release o=flujos.org
+Pin-Priority: 700

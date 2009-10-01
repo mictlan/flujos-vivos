@@ -1,0 +1,14 @@
+audio_device_state:1:mpd
+state: stop
+random: 0
+repeat: 1 
+crossfade: 10
+playlist_begin
+0:02-Argentina_Dictadura.ogg
+1:Capsulas/Flujos-vivos.ogg
+2:Capsulas/Haz_radio_1.ogg
+3:Capsulas/Haz_radio_2.ogg
+4:Capsulas/Haz_radio_3.ogg
+5:Capsulas/Un_red_lleno_de_DJs_version_corta.ogg
+6:Capsulas/Un_red_lleno_de_DJs_version_larga.ogg
+playlist_end
