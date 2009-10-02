@@ -26,6 +26,22 @@ Package: *
 Pin: release a=lenny-backports
 Pin-Priority: 500
 
+Package: jack-tools
+Pin: release o=flujos.org
+Pin-Priority: 999
+
+Package: jackd
+Pin: release o=flujos.org
+Pin-Priority: 999
+
+Package: libjack0
+Pin: release o=flujos.org
+Pin-Priority: 999
+
+Package: python-dbus 
+Pin: release o=flujos.org
+Pin-Priority: 999
+
 Package: *
 Pin: release o=flujos.org
 Pin-Priority: 700

@@ -55,8 +55,7 @@ mousepad
 pidgin-encryption
 pidgin
 xfburn
-#pd-giss
-pygiss
+#pygiss
 #theorastreamer
 filezilla
 telnet
@@ -65,15 +64,9 @@ nicotine
 mpc
 ncmpc
 ncmpcpp
-#rhythmbox
 thunar-volman
 thunar-media-tags-plugin
 gparted
-#gnome-system-tools
-#gnome-power-manager
-#gnome-network-admin
-#network-manager
-#network-manager-gnome
 aqualung
 jackeq
 soundconverter
@@ -84,8 +77,6 @@ firmware-iwlwifi
 atmel-firmware
 linux-wlan-ng-firmware
 rt73-common
-#linux-image-2.6.30-1-486
-#linux-image-2.6.30-1-amd64
 gnusound
 sound-juicer
 serpentine
@@ -103,7 +94,6 @@ xfce4-mount-plugin
 xfce4-mpc-plugin
 xfce4-xfapplet-plugin
 exo-utils
-#screenlets
 xfce4-clipman-plugin
 xfce4-cpugraph-plugin
 xfce4-datetime-plugin
@@ -141,3 +131,4 @@ djvulibre-plugin
 screen
 mplayer
 auto-apt
+hotssh
