@@ -1,0 +1,63 @@
+info_begin
+mpd_version: 0.13.2
+fs_charset: UTF-8
+info_end
+directory: Capsulas
+begin: Capsulas
+songList begin
+key: Flujos-vivos.ogg
+file: Capsulas/Flujos-vivos.ogg
+Time: 395
+Album: Flujos-vivos
+Title: Flujos-vivos
+Artist: Radio.flujos.org
+Genre: streaming con software libre
+mtime: 1254465710
+key: Haz_radio_1.ogg
+file: Capsulas/Haz_radio_1.ogg
+Time: 39
+Album: Flujos-vivos
+Title: Haz_radio_1
+Artist: Radio.flujos.org
+Genre: streaming con software libre
+mtime: 1254465711
+key: Haz_radio_2.ogg
+file: Capsulas/Haz_radio_2.ogg
+Time: 44
+Album: Flujos-vivos
+Title: Haz_radio_2
+Artist: Radio.flujos.org
+Genre: streaming con software libre
+mtime: 1254465711
+key: Haz_radio_3.ogg
+file: Capsulas/Haz_radio_3.ogg
+Time: 47
+Album: Flujos-vivos
+Title: Haz_radio_3
+Artist: Radio.flujos.org
+Genre: streaming con software libre
+mtime: 1254465712
+key: Un_red_lleno_de_DJs_version_corta.ogg
+file: Capsulas/Un_red_lleno_de_DJs_version_corta.ogg
+Time: 88
+Album: Flujos-vivos
+Title: Un_red_lleno_de_DJs_version_corta
+Artist: Radio.flujos.ogg
+Genre: streaming con software libre
+mtime: 1254465712
+key: Un_red_lleno_de_DJs_version_larga.ogg
+file: Capsulas/Un_red_lleno_de_DJs_version_larga.ogg
+Time: 147
+Album: Flujos-vivos
+Title: Un_red_lleno_de_DJs_version_larga
+Artist: Radio.flujos.org
+Genre: streaming con software libre
+mtime: 1254465714
+songList end
+end: Capsulas
+songList begin
+key: 02-Argentina_Dictadura.ogg
+file: 02-Argentina_Dictadura.ogg
+Time: 154
+mtime: 1254465707
+songList end
