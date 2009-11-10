@@ -57,7 +57,7 @@
 	<separator/>
 
 	<app name="Ejecutar Programa..." cmd="xfrun4" icon="gnome-fs-executable"/>
-    <app name="Fluconf" cmd="fluconf" icon="darklord" term="true"/>
+    <app name="Flujconf" cmd="flujconf" icon="darklord" term="true"/>
 	<separator/>
 
 	<app name="Terminal" cmd="exo-open --launch TerminalEmulator" icon="gnome-terminal" visible="true"/>

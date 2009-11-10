@@ -1,10 +1,10 @@
 [Desktop Entry]
-Name=Darkice
-Comment=Oja de configuracion de darkice
+Name=flujconf
+Comment=Configurador para flujos
 Icon=darklord
 Type=Application
-Categories=Audio;
-Exec=less ~/.darkice.cfg
+Categories=AudioVideo;Audio;
+Exec=flujconf
 StartupNotify=false
 Terminal=true
 MimeType=audio/basic;
