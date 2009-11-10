@@ -1,5 +1,5 @@
 # Set to "yes" to start jackd at boot
-START_DAEMON=yes
+#START_DAEMON=no
 
 # The jackd process will run under this user
 USER=radio

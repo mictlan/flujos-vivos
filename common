@@ -1,7 +1,7 @@
 # config/common - common options for live-helper(7)
 
 # LH_CONFIG_VERSION: internal version of the configuration file format
-LH_CONFIG_VERSION="1"
+LH_CONFIG_VERSION="1.0.5"
 
 # $LH_APT: set package manager
 # (Default: apt)
@@ -128,4 +128,4 @@ _QUIET="disabled"
 # Internal stuff (FIXME)
 APT_OPTIONS="--yes"
 APTITUDE_OPTIONS="--assume-yes"
-GZIP_OPTIONS="--best --rsyncable"
+GZIP_OPTIONS="--best  --rsyncable"

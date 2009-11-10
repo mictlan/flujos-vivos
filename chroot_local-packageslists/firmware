@@ -1,0 +1,6 @@
+firmware-ralink
+firmware-iwlwifi
+atmel-firmware
+linux-wlan-ng-firmware
+#firmware-linux-free
+#firmware-linux-nonfree

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Mpd
+Comment=Oja de configuracion de mpd
+Icon=mpd
+Type=Application
+Categories=Audio;
+Exec=less ~/.mpdconf
+StartupNotify=false
+Terminal=true
+MimeType=audio/basic;

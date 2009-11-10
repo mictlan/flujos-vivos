@@ -2,12 +2,11 @@
 
 ## LH: Flujos.org (Xfce)
 #include <xfce>
-
 manpages-es-extra 
 debian-reference-es 
 language-env 
 locales 
-#localepurge 
+localepurge 
 manpages-es 
 iceweasel-l10n-es-ar 
 iceweasel 
@@ -19,9 +18,6 @@ aircrack-ng
 gcalctool 
 tomboy 
 myspell-es 
-#madwifi-tools 
-#madwifi-source 
-#kernel-package 
 mpd 
 sonata 
 listen
@@ -29,12 +25,10 @@ flac
 vorbis-tools
 vlc 
 vlc-plugin-jack
-#darkice-full 
 darkice
 darksnow
 icecast2
 ssh 
-evince
 bash-completion
 system-config-printer
 gnome-app-install
@@ -43,11 +37,8 @@ gimp
 inkscape
 create-resources
 audacity
-#qjackctl
-#jackd
 jack-tools
 timemachine
-gftp-gtk
 transmission
 audacious
 eog
@@ -72,10 +63,6 @@ jackeq
 soundconverter
 ntfs-3g
 cryptsetup
-firmware-ralink
-firmware-iwlwifi
-atmel-firmware
-linux-wlan-ng-firmware
 rt73-common
 gnusound
 sound-juicer
@@ -119,8 +106,7 @@ xfce4-weather-plugin
 xfce4-wmdock-plugin
 xfce4-xkb-plugin
 ecasound
-ecawave
-jamin
+#jamin
 gstreamer0.10-plugins-bad
 wicd
 ffmpeg
@@ -132,3 +118,7 @@ screen
 mplayer
 auto-apt
 flujconf
+gnash
+clamav
+samba
+ihu

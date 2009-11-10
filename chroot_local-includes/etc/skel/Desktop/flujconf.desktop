@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=flujconf
+Comment=Configurador para flujos
+Icon=darklord
+Type=Application
+Categories=Audio;
+Exec=flujconf
+StartupNotify=false
+Terminal=true
+MimeType=audio/basic;

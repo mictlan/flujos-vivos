@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Darkice
+Comment=Oja de configuracion de darkice
+Icon=darklord
+Type=Application
+Categories=Audio;
+Exec=less ~/.darkice.cfg
+StartupNotify=false
+Terminal=true
+MimeType=audio/basic;
