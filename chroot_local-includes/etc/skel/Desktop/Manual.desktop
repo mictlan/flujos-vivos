@@ -1,0 +1,13 @@
+#!/usr/bin/env xdg-open
+
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Type=Link
+Icon[es_MX]=manual
+Name[es_MX]=Manual
+URL=file:///home/radio/Manual.djvu
+Comment[es_MX]=manual de flujos
+Name=Manual
+Comment=manual de flujos
+Icon=manual
