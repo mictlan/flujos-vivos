@@ -21,7 +21,3 @@ Pin-Priority: 999
 Package: squashfs-tools
 Pin: version 1:4.0*
 Pin-Priority: 999
-
-Package: jack-tools
-Pin: release o=flujos.org
-Pin-Priority: 990
