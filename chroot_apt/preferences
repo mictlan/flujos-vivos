@@ -25,16 +25,3 @@ Pin-Priority: 999
 Package: jack-tools
 Pin: release o=flujos.org
 Pin-Priority: 990
-
-Package: jackd
-Pin: version 0.116*
-Pin-Priority: 999
-
-Package: libjack0
-Pin: version 0.116* 
-Pin-Priority: 999
-
-Package: python-dbus 
-Pin: release o=flujos.org
-Pin-Priority: 999
-
