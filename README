@@ -1,0 +1,15 @@
+Configuracion Flujos-lives
+
+para utilizarlo:
+
+1. mkdir flujos-lives
+2. cd flujos-lives
+3. git clone git://github.com/mictlan/flujos-lives.git config
+4. lh config (o "lh config -b usb-hdd" para hacer un imagen para usb, por ejemplo)
+5. lh build
+
+y para probar el disco:
+
+6. qemu -m 256 -cdrom binary.iso -redir tcp:2222::22 -soundhw all
+
+
