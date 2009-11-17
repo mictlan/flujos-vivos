@@ -3,7 +3,7 @@
 
 ## Change this to prevent MPD from being started as a system service (for
 ## example, if you want to run it from a regular user account)
-START_MPD=false
+START_MPD=true
 
 ## The configuration file location for mpd:
 # MPDCONF=/etc/mpd.conf
