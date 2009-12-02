@@ -13,7 +13,7 @@ MIRROR_SECURITY="${MIRROR_SECURITY:-http://localhost:9999/security/}"
 ARCHITECTURE="i386"
 DATE="$(date +%Y%m%d)"
 VERSION="1.1"
-NAME="${NAME}"
+NAME="flujos-vivos-${VERSION}-${DISTRIBUTION}"
 DEST="/home/kev/www/live/"
 
 for DISTRIBUTION in ${DISTRIBUTIONS}
