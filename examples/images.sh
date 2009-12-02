@@ -12,6 +12,9 @@ MIRROR_SECURITY="${MIRROR_SECURITY:-http://localhost:9999/security/}"
 #ARCHITECTURE="$(dpkg --print-architecture)"
 ARCHITECTURE="i386"
 DATE="$(date +%Y%m%d)"
+VERSION="1.1"
+NAME="${NAME}"
+DEST="/home/kev/www/live/"
 
 for DISTRIBUTION in ${DISTRIBUTIONS}
 do
@@ -79,34 +82,44 @@ do
 
 		fi
 
-		lh build 2>&1 | tee flujos-vivos-${DISTRIBUTION}-${ARCHITECTURE}-${FLAVOUR}.iso.log
+		lh build 2>&1 | tee ${NAME}-${ARCHITECTURE}-${FLAVOUR}.iso.log
 
-		mv binary.iso flujos-vivos-${DISTRIBUTION}-${ARCHITECTURE}-${FLAVOUR}.iso
-		mv binary.list flujos-vivos-${DISTRIBUTION}-${ARCHITECTURE}-${FLAVOUR}.iso.list
-		mv binary.packages flujos-vivos-${DISTRIBUTION}-${ARCHITECTURE}-${FLAVOUR}.iso.packages
+		mv binary.iso ${NAME}-${ARCHITECTURE}-${FLAVOUR}.iso
+		mv binary.list ${NAME}-${ARCHITECTURE}-${FLAVOUR}.iso.list
+		mv binary.packages ${NAME}-${ARCHITECTURE}-${FLAVOUR}.iso.packages
+        md5sum ${NAME}-${ARCHITECTURE}-${FLAVOUR}.iso > ${NAME}-${ARCHITECTURE}-${FLAVOUR}.iso.md5sum
+        cp ${NAME}-${ARCHITECTURE}-${FLAVOUR}.iso* ${DEST}/iso-cdrom/
 
 		if [ "${SOURCE}" = "enabled" ]
 		then
-			mv source.tar.gz flujos-vivos-${DISTRIBUTION}-source-${FLAVOUR}.tar.gz
-			mv source.list flujos-vivos-${DISTRIBUTION}-source-${FLAVOUR}.tar.gz.list
+			mv source.tar.gz ${NAME}-source-${FLAVOUR}.tar.gz
+			mv source.list ${NAME}-source-${FLAVOUR}.tar.gz.list
 		fi
 
 		lh clean --binary
 		lh config -b usb-hdd
-		lh binary 2>&1 | tee flujos-vivos-${DISTRIBUTION}-${ARCHITECTURE}-${FLAVOUR}.img.log
+		lh binary 2>&1 | tee ${NAME}-${ARCHITECTURE}-${FLAVOUR}.img.log
 
-		mv binary.img flujos-vivos-${DISTRIBUTION}-${ARCHITECTURE}-${FLAVOUR}.img
-		mv binary.list flujos-vivos-${DISTRIBUTION}-${ARCHITECTURE}-${FLAVOUR}.img.list
-		mv binary.packages flujos-vivos-${DISTRIBUTION}-${ARCHITECTURE}-${FLAVOUR}.img.packages
+		mv binary.img ${NAME}-${ARCHITECTURE}-${FLAVOUR}.img
+		mv binary.list ${NAME}-${ARCHITECTURE}-${FLAVOUR}.img.list
+		mv binary.packages ${NAME}-${ARCHITECTURE}-${FLAVOUR}.img.packages
+        md5sum ${NAME}-${ARCHITECTURE}-${FLAVOUR}.img > ${NAME}-${ARCHITECTURE}-${FLAVOUR}.img.md5sum
+        cp ${NAME}-${ARCHITECTURE}-${FLAVOUR}.img* ${DEST}/usb-hdd/
 
 		lh clean --binary
 		lh config -b net
-		lh binary 2>&1 | tee flujos-vivos-${DISTRIBUTION}-i386-${FLAVOUR}-net.tar.gz.log
+		lh binary 2>&1 | tee ${NAME}-i386-${FLAVOUR}-net.tar.gz.log
 
-		mv binary-net.tar.gz flujos-vivos-${DISTRIBUTION}-i386-${FLAVOUR}-net.tar.gz
-		mv binary.list flujos-vivos-${DISTRIBUTION}-i386-${FLAVOUR}-net.tar.gz.list
-		mv binary.packages flujos-vivos-${DISTRIBUTION}-i386-${FLAVOUR}-net.tar.gz.packages
+		mv binary-net.tar.gz ${NAME}-i386-${FLAVOUR}-net.tar.gz
+		mv binary.list ${NAME}-i386-${FLAVOUR}-net.tar.gz.list
+		mv binary.packages ${NAME}-i386-${FLAVOUR}-net.tar.gz.packages
+        md5sum ${NAME}-${ARCHITECTURE}-${FLAVOUR}-net.tar.gz > ${NAME}-${ARCHITECTURE}-${FLAVOUR}-net.tar.gz.md5sum
+        cp ${NAME}-${ARCHITECTURE}-${FLAVOUR}-net.tar.gz* ${DEST}/net/
 
-		mv binary/*/filesystem.squashfs flujos-vivos-${DISTRIBUTION}-i386-${FLAVOUR}.squashfs
+		mv binary/*/filesystem.squashfs ${NAME}-i386-${FLAVOUR}.squashfs
+        md5sum ${NAME}-i386-${FLAVOUR}.squashfs > ${NAME}-i386-${FLAVOUR}.squashfs.md5sum
+        cp ${NAME}-i386-${FLAVOUR}.squashfs* ${DEST}/squashfs/
 	done
 done
+
+rsync ${DEST}/ flujosor@flujos.org:/home/flujosor/public_html/live/
