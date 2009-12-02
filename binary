@@ -5,20 +5,20 @@
 LH_BINARY_FILESYSTEM="fat16"
 
 # $LH_BINARY_IMAGES: set image type
-# (Default: iso)
-LH_BINARY_IMAGES="iso"
+# (Default: net)
+LH_BINARY_IMAGES="net"
 
 # $LH_BINARY_INDICES: set apt/aptitude generic indices
-# (Default: enabled)
-LH_BINARY_INDICES="enabled"
+# (Default: --tasksel)
+LH_BINARY_INDICES="--tasksel"
 
 # $LH_BOOTAPPEND_LIVE: set boot parameters
 # (Default: empty)
-LH_BOOTAPPEND_LIVE="locale=es_MX.UTF-8 keyb=es"
+LH_BOOTAPPEND_LIVE="locale=es_MX.UTF-8 keyb=la-latin1"
 
 # $LH_BOOTAPPEND_INSTALL: set boot parameters
 # (Default: empty)
-LH_BOOTAPPEND_INSTALL="-- }}"
+LH_BOOTAPPEND_INSTALL="cdrom-detect/try-usb=true -- }}  -- locale=es_MX.UTF-8 keyb=es  -- locale=es_MX.UTF-8 keyb=es  -- locale=es_MX.UTF-8 keyb=es  -- locale=es_MX.UTF-8 keyb=es  -- locale=es_MX.UTF-8 keyb=es  -- locale=es_MX.UTF-8 keyb=es  -- locale=es_MX.UTF-8 keyb=es  -- locale=es_MX.UTF-8 keyb=es  -- locale=es_MX.UTF-8 keyb=es  -- locale=es_MX.UTF-8 keyb=es  -- ${LH_BOOTAPPEND_LIVE}"
 
 # $LH_BOOTLOADER: set bootloader
 # (Default: syslinux)
