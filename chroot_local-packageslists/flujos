@@ -63,7 +63,7 @@ jackeq
 soundconverter
 ntfs-3g
 cryptsetup
-rt73-common
+#rt73-common
 gnusound
 sound-juicer
 serpentine
@@ -115,7 +115,7 @@ thunar-archive-plugin
 xpdf
 djvulibre-plugin
 screen
-mplayer
+#mplayer
 auto-apt
 flujconf
 gnash
