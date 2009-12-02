@@ -45,8 +45,8 @@ LH_LINUX_PACKAGES="linux-image-2.6.31-rt11"
 LH_PACKAGES=""
 
 # $LH_PACKAGES_LISTS: set package list to install
-# (Default: flujos firmware)
-LH_PACKAGES_LISTS="flujos firmware"
+# (Default: flujos)
+LH_PACKAGES_LISTS="flujos"
 
 # $LH_TASKS: set tasks to install
 # (Default: empty)

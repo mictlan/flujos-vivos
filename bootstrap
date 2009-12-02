@@ -29,16 +29,16 @@ LH_BOOTSTRAP_KEYRING=""
 LH_DISTRIBUTION="lenny"
 
 # $LH_MIRROR_BOOTSTRAP: set mirror to bootstrap from
-# (Default: http://localhost:9999/debian)
-LH_MIRROR_BOOTSTRAP="http://localhost:9999/debian"
+# (Default: http://localhost:9999/debian/)
+LH_MIRROR_BOOTSTRAP="http://localhost:9999/debian/"
 
 # $LH_MIRROR_CHROOT: set mirror to fetch packages from
-# (Default: http://localhost:9999/debian)
-LH_MIRROR_CHROOT="http://localhost:9999/debian"
+# (Default: http://localhost:9999/debian/)
+LH_MIRROR_CHROOT="http://localhost:9999/debian/"
 
 # $LH_MIRROR_CHROOT_SECURITY: set security mirror to fetch packages from
-# (Default: http://localhost:9999/security)
-LH_MIRROR_CHROOT_SECURITY="http://localhost:9999/security"
+# (Default: http://localhost:9999/security/)
+LH_MIRROR_CHROOT_SECURITY="http://localhost:9999/security/"
 
 # $LH_MIRROR_BINARY: set mirror which ends up in the image
 # (Default: http://ftp.egr.msu.edu/debian)
@@ -49,5 +49,5 @@ LH_MIRROR_BINARY="http://ftp.egr.msu.edu/debian"
 LH_MIRROR_BINARY_SECURITY="http://security.debian.org/"
 
 # $LH_CATEGORIES: select categories to use
-# (Default: main contrib non-free)
-LH_CATEGORIES="main contrib non-free"
+# (Default: main)
+LH_CATEGORIES="main"
