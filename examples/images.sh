@@ -82,6 +82,8 @@ do
 
 		fi
 
+        lh config -b iso
+
 		lh build 2>&1 | tee flujos-vivos-${VERSION}-${DISTRIBUTION}-${ARCHITECTURE}-${FLAVOUR}.iso.log
 
 		mv binary.iso flujos-vivos-${VERSION}-${DISTRIBUTION}-${ARCHITECTURE}-${FLAVOUR}.iso
@@ -122,4 +124,4 @@ do
 	done
 done
 
-rsync ${DEST}/ flujosor@flujos.org:/home/flujosor/public_html/live/
+rsync ${DEST}/ ${RDEST}
