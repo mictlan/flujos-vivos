@@ -1,5 +1,5 @@
 jackd="jackd"
-jackh="jack.plumbing mpd"
+jackh="qjackctl"
 realtime="yes"
 silent="yes"
 driver="alsa"
