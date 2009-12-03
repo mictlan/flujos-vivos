@@ -18,7 +18,7 @@ LH_BOOTAPPEND_LIVE="locale=es_MX.UTF-8 keyb=la-latin1"
 
 # $LH_BOOTAPPEND_INSTALL: set boot parameters
 # (Default: empty)
-LH_BOOTAPPEND_INSTALL="cdrom-detect/try-usb=true -- }}  -- locale=es_MX.UTF-8 keyb=es  -- locale=es_MX.UTF-8 keyb=es  -- locale=es_MX.UTF-8 keyb=es  -- locale=es_MX.UTF-8 keyb=es  -- locale=es_MX.UTF-8 keyb=es  -- locale=es_MX.UTF-8 keyb=es  -- locale=es_MX.UTF-8 keyb=es  -- locale=es_MX.UTF-8 keyb=es  -- locale=es_MX.UTF-8 keyb=es  -- locale=es_MX.UTF-8 keyb=es  -- ${LH_BOOTAPPEND_LIVE}"
+LH_BOOTAPPEND_INSTALL="cdrom-detect/try-usb=true locale=es_MX.UTF-8 keyb=la-latin1"
 
 # $LH_BOOTLOADER: set bootloader
 # (Default: syslinux)
