@@ -1,8 +1,0 @@
-[Desktop Entry]
-Name=JACK Control
-Comment=QT Jack Control Interface
-Exec=/usr/bin/qjackctl
-Terminal=false
-Type=Application
-Icon=qjackctl.xpm
-Categories=Application;AudioVideo;Audio;
