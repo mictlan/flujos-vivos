@@ -124,4 +124,4 @@ do
 	done
 done
 
-rsync ${DEST}/ ${RDEST}
+#rsync ${DEST}/ ${RDEST}
