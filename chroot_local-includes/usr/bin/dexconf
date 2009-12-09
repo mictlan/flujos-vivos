@@ -197,7 +197,7 @@ Section "InputDevice"
 	Option		"XkbRules"	"$XKB_RULES"
 	Option		"XkbModel"	"$XKB_MODEL"
 	Option		"XkbLayout"	"latam, us"
-    Option      "XkbOptions" "grp:alt_shift_toggle,grp_led:scroll"
+        Option      "XkbOptions" "grp:shifts_toggle,grp_led:scroll"
 SECTION
 if [ -n "$XKB_VARIANT" ]; then
   printf "\tOption\t\t\"XkbVariant\"\t\"$XKB_VARIANT\"\n" >&4

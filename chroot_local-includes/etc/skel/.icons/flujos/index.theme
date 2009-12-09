@@ -4,7 +4,7 @@
 [Icon Theme]
 Name=Flujos
 Name[es]=Flujos
-Inherits=gnome
+Inherits=Rodent
 Directories=scalable/actions,scalable/apps,scalable/places
 
 [scalable/actions]

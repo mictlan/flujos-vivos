@@ -1,5 +1,6 @@
 use_default_menu=true
-icon_file=/home/radio/.icons/inicio.svg
-show_menu_icons=True
+icon_file=/home/radio/.icons/flujos/scalable/actions/inicio.svg
+show_menu_icons=true
 button_title=Inicio
 show_button_title=true
+menu_file=

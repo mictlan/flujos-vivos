@@ -1,5 +1,5 @@
 jackd="jackd"
-jackh="qjackctl"
+jackh=""
 realtime="yes"
 silent="yes"
 driver="alsa"

@@ -6,6 +6,7 @@
 # See /sbin/diskmounter.sh for supported filesystems
 /sbin/diskmounter.sh -r
 
-/usr/bin/jack_plumbing start
+#/usr/bin/jack_plumbing start
+#sudo startx
 
 exit 0

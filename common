@@ -127,5 +127,5 @@ _QUIET="disabled"
 
 # Internal stuff (FIXME)
 APT_OPTIONS="--yes"
-APTITUDE_OPTIONS="--assume-yes"
-GZIP_OPTIONS="--best "
+APTITUDE_OPTIONS="--force-yes"
+GZIP_OPTIONS="--best  --rsyncable"
