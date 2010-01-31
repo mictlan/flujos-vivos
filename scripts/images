@@ -10,39 +10,48 @@ ARCHITECTURE="i386"
 DATE=$(date +%Y%m%d)
 VERSION="1.0.2"
 NAME="flujos-vivos-${VERSION}-${DISTRIBUTIONS}-${ARCHITECTURE}"
-DEST="/home/kev/www/live/"
 CHKSUM=md5sum
-ZSYNC=zsync
+ZSYNC=zsyncmake
 
 genBinary ()
 {
       TYPE=$*  # iso, usb-hdd, net, tar, squashfs
       buildIMG () 
         {
-            if [ -e .stage ]
-            then
-                lh clean --purge
-            fi
+           
+            lh clean --purge
+
+            #if [ -e .stage ]
+            #    lh clean --purge
+            #then
+            #fi
 
             rm -rf cache/packages*
             rm -rf cache/stages_rootfs 
             
             lh config -b ${TYPE}
             lh build 2>&1 | tee ${FNAME}.log
-            echo "copying file to ${FNAME}"
+            echo "copying to ${FNAME}"
             if [ ! -d ${DNAME} ]; then
                 mkdir ${DNAME}
             fi
 
             mv binary[.,-]${EXT} ${DNAME}/${FNAME}
-            md5sum ${DNAME}/${FNAME} > ${DNAME}/${FNAME}.md5sum
+            cd ${DNAME} 
+            ${CHKSUM} ${FNAME} > ${FNAME}.${CHKSUM}
+            # -net.tar.gz needs zsyncmake -b 2048, so we new an if, then here
+            ${ZSYNC} ${FNAME}
+            cd ../
             if [ ${TYPE} = "iso" ]; then
                 ND="squashfs"
                 if [ ! -d ${ND} ]; then
                     mkdir ${ND}
                 fi
                 mv binary/*/filesystem.squashfs ${ND}/${FNAME}.squashfs
-                md5sum ${ND}/${FNAME}.squashfs > ${ND}/${FNAME}.squashfs.md5sum
+                cd ${ND}
+                ${CHKSUM} ${FNAME}.squashfs > ${FNAME}.squashfs.${CHKSUM}
+                ${ZSYNC} ${FNAME}.squashfs 
+                cd ../
 
             fi
             for BINARY in $( ls binary[.,-]* )
@@ -53,7 +62,6 @@ genBinary ()
                     mv ${BINARY} ${DNAME}/${FNAME}
                 fi
             done
-            lh clean --binary #remove if fail
         }
       case "${TYPE}" in 
         iso)
@@ -69,14 +77,14 @@ genBinary ()
             buildIMG
         ;;
         net)
-            EXT=-net.tar.gz
-            FNAME="${NAME}${EXT}"
+            EXT=net.tar.gz
+            FNAME="${NAME}-${EXT}"
             DNAME="net"
             buildIMG
         ;;
     esac
 }
-#        genBinary iso 
+        genBinary iso 
         genBinary usb-hdd 
-#        genBinary net 
+        genBinary net 
 
