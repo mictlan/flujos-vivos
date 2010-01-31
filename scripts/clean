@@ -1,12 +1,14 @@
 #!/bin/sh
 
+DIRS="usb-hdd iso-cdrom net squashfs"
+
 lh clean noautoconfig --all ${@}
 
 rm -f build.log
 
 # Remove generated files
 rm -f config/binary config/bootstrap config/chroot config/common config/source
-rm -f flujos-vivos-*
+
 
 # Remove empty directories in config tree
 find -depth -type d -empty -exec rmdir {} \;
