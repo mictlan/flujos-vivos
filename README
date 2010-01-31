@@ -9,6 +9,6 @@ para utilizarlo:
 
 y para probar el disco:
 
-6. qemu -m 256 -cdrom binary.iso -redir tcp:2222::22 -soundhw all
+6. qemu -m 512 -cdrom binary.iso -redir tcp:2222::22 -soundhw all
 
 
