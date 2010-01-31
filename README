@@ -1,12 +1,11 @@
-Configuracion Flujos-lives
+Configuracion Flujos-Vivos
 
 para utilizarlo:
 
-1. mkdir flujos-lives
+1. git clone git://github.com/mictlan/flujos-lives.git config
 2. cd flujos-lives
-3. git clone git://github.com/mictlan/flujos-lives.git config
-4. lh config (o "lh config -b usb-hdd" para hacer un imagen para usb, por ejemplo)
-5. lh build
+3. ./scripts/config
+4. ./scripts/build
 
 y para probar el disco:
 
