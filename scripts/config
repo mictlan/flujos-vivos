@@ -1,0 +1,46 @@
+#!/bin/sh
+MIRROR_BINARY="http://ftp.egr.msu.edu/debian/"
+MIRROR_BINARY_SECURITY="http://ftp.ch.debian.org/debian-security/"
+BOOTAPPEND="locale=es_MX.UTF-8 keyb=la-latin1"
+LH_SYSLINUX_MENU_LIVE_ENTRY="Incia"
+LH_SYSLINUX_MENU_LIVE_FAILSAFE_ENTRY="Modo a Prueba de Fallos"
+LH_SYSLINUX_MENU_MEMTEST_ENTRY="Prueba de RAM"
+
+MIRROR_DEBIAN="http://localhost:9999/debian"
+MIRROR_SECURITY="http://localhost:9999/security/"
+MIRROR_BINARY="http://ftp.egr.msu.edu/debian/"
+MIRROR_BINARY_SECURITY="http://ftp.ch.debian.org/debian-security/"
+
+#--archive-areas "main contrib non-free" \
+lh config noautoconfig \
+	--apt-recommends disabled \
+	--debian-installer-distribution squeeze \
+    --debian-installer-gui false \
+	--distribution lenny \
+    --categories "main contrib non-free" \
+    --architecture i386 \
+	--linux-flavours flujos \
+    --linux-packages linux-image-2.6.31-rt11 \
+	--mirror-bootstrap ${MIRROR_DEBIAN} \
+	--mirror-chroot ${MIRROR_DEBIAN} \
+	--mirror-chroot-security ${MIRROR_SECURITY} \
+	--mirror-binary ${MIRROR_BINARY} \
+	--mirror-binary-security ${MIRROR_BINARY_SECURITY} \
+	--packages-lists flujos \
+    --hooks "rm_from_init_d.sh mpd_per.sh" \
+    --language es \
+    --bootappend-live $BOOTAPPEND \
+    --hostname flujos.org \
+	--iso-application "Flujos Vivos" \
+    --iso-volume "flujos-vivos" \
+    --iso-publisher "radio.flujos.org" \
+    --memtest memtest86+ \
+    --net-root-filesystem nfs \
+    --net-root-path /srv/debian-live \
+    --net-root-server "192.168.1.1" \
+    --net-cow-filesystem "nfs" \
+    --syslinux-splash "config/binary_syslinux/splash.rle" \
+    --syslinux-timeout 4 \
+    --syslinux-menu enabled \
+    --username radio \
+    ${@}

@@ -1,0 +1,82 @@
+#!/bin/sh -e
+
+# Static variables
+DISTRIBUTIONS="lenny"
+FLAVOURS="-flujos"
+
+# Dynamic variables
+#ARCHITECTURE="$(dpkg --print-architecture)"
+ARCHITECTURE="i386"
+DATE=$(date +%Y%m%d)
+VERSION="1.0.2"
+NAME="flujos-vivos-${VERSION}-${DISTRIBUTIONS}-${ARCHITECTURE}"
+DEST="/home/kev/www/live/"
+CHKSUM=md5sum
+ZSYNC=zsync
+
+genBinary ()
+{
+      TYPE=$*  # iso, usb-hdd, net, tar, squashfs
+      buildIMG () 
+        {
+            if [ -e .stage ]
+            then
+                lh clean --purge
+            fi
+
+            rm -rf cache/packages*
+            rm -rf cache/stages_rootfs 
+            
+            lh config -b ${TYPE}
+            lh build 2>&1 | tee ${FNAME}.log
+            echo "copying file to ${FNAME}"
+            if [ ! -d ${DNAME} ]; then
+                mkdir ${DNAME}
+            fi
+
+            mv binary[.,-]${EXT} ${DNAME}/${FNAME}
+            md5sum ${DNAME}/${FNAME} > ${DNAME}/${FNAME}.md5sum
+            if [ ${TYPE} = "iso" ]; then
+                ND="squashfs"
+                if [ ! -d ${ND} ]; then
+                    mkdir ${ND}
+                fi
+                mv binary/*/filesystem.squashfs ${ND}/${FNAME}.squashfs
+                md5sum ${ND}/${FNAME}.squashfs > ${ND}/${FNAME}.squashfs.md5sum
+
+            fi
+            for BINARY in $( ls binary[.,-]* )
+            do
+                if [ ${BINARY#*[.,-]} != "tar.gz" ]; then
+                    mv ${BINARY} ${DNAME}/${FNAME}.${BINARY#*[.,-]}
+                else
+                    mv ${BINARY} ${DNAME}/${FNAME}
+                fi
+            done
+            lh clean --binary #remove if fail
+        }
+      case "${TYPE}" in 
+        iso)
+            EXT=${TYPE}
+            FNAME="${NAME}.${EXT}"
+            DNAME="iso-cdrom"
+            buildIMG
+        ;;
+        usb-hdd)
+            EXT=img
+            FNAME="${NAME}.${EXT}"
+            DNAME="usb-hdd"
+            buildIMG
+        ;;
+        net)
+            EXT=-net.tar.gz
+            FNAME="${NAME}${EXT}"
+            DNAME="net"
+            buildIMG
+        ;;
+    esac
+}
+#        genBinary iso 
+        genBinary usb-hdd 
+#        genBinary net 
+
