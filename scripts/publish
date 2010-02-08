@@ -1,0 +1,43 @@
+#!/bin/sh 
+DEST="/var/www/live/"
+VER=${FV_VERSION}
+URLS="http://live.flujos.org http://live.acervo.org"
+CHKSUM=md5sum
+DIRS="usb-hdd iso-cdrom net squashfs"
+FNAME="flujos-vivos-$VER-lenny-i386"
+
+# ${FNAME##*.} get extension
+
+# build extra download methods
+
+for dir in ${DIRS}
+do
+    cd $dir
+    case ${dir} in
+      iso-cdrom)
+          zsyncmake ${FNAME}.iso -u $(echo $URLS | awk '{ print $1}')/${dir}/${FNAME}.iso -u $(echo $URLS |awk '{ print $2}')/${dir}/${FNAME}.iso
+          ${CHKSUM} ${FNAME}.iso > ${FNAME}.iso.${CHKSUM}
+      ;;
+      usb-hdd)
+          zsyncmake ${FNAME}.img -u $(echo $URLS | awk '{ print $1}')/${dir}/${FNAME}.img -u $(echo $URLS |awk '{ print $2}')/${dir}/${FNAME}.img
+         ${CHKSUM} ${FNAME}.img > ${FNAME}.img.${CHKSUM}
+       ;;
+      squashfs)
+          zsyncmake ${FNAME}.squashfs -u $(echo $URLS | awk '{ print $1}')/${dir}/${FNAME}.squashfs -u $(echo $URLS |awk '{ print $2}')/${dir}/${FNAME}.squashfs
+         ${CHKSUM} ${FNAME}.squashfs > ${FNAME}.squashfs.${CHKSUM}
+       ;;
+      net)
+          zsyncmake ${FNAME}-net.tar.gz -u $(echo $URLS | awk '{ print $1}')/${dir}/${FNAME}-net.tar.gz -u $(echo $URLS |awk '{ print $2}')/${dir}/${FNAME}-net.tar.gz
+        ${CHKSUM} ${FNAME}-net.tar.gz > ${FNAME}-net.tar.gz.${CHKSUM}
+       ;;
+     esac
+     cd ../
+done
+
+
+# copy files de public html
+for dir in ${DIRS}
+do
+    cp ${dir}/* ${DEST}/${dir}/
+done
+
