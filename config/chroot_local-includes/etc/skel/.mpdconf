@@ -81,8 +81,15 @@ default_permissions             "read,add,control,admin"
 # An example of an ALSA output:
 #
 audio_output {
+        type                    "alsa"
+        name                    "alsa_MPD"
+        device                  "hw:0,0"     # optional
+        format                  "44100:16:2" # optional
+}
+
+audio_output {
         type                    "jack"
-        name                    "MPD"
+        name                    "jack_MPD"
 #        device                  "default" #"hw:0,0"     # optional
         format                  "44100:16:2" # optional
 }
@@ -143,7 +150,7 @@ audio_output {
 # If you want MPD to adjust the volume of audio sent to the
 # audio outputs, you can tell it to use the software mixer:
 #
-#mixer_type                      "software"
+mixer_type                      "software"
 #
 ################################################################
 
