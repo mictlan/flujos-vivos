@@ -8,7 +8,7 @@ rm -f build.log
 
 # Remove generated files
 rm -f config/binary config/bootstrap config/chroot config/common config/source
-
+rm -fr cache
 
 # Remove empty directories in config tree
 find -depth -type d -empty -exec rmdir {} \;
