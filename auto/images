@@ -35,21 +35,12 @@ genBinary ()
             fi
 
             mv binary[.,-]${EXT} ${DNAME}/${FNAME}
-            cd ${DNAME} 
-            ${CHKSUM} ${FNAME} > ${FNAME}.${CHKSUM}
-            # -net.tar.gz needs zsyncmake -b 2048, so we new an if, then here
-            ${ZSYNC} ${FNAME}
-            cd ../
             if [ ${TYPE} = "iso" ]; then
                 ND="squashfs"
                 if [ ! -d ${ND} ]; then
                     mkdir ${ND}
                 fi
-                mv binary/*/filesystem.squashfs ${ND}/${FNAME}.squashfs
-                cd ${ND}
-                ${CHKSUM} ${FNAME}.squashfs > ${FNAME}.squashfs.${CHKSUM}
-                ${ZSYNC} ${FNAME}.squashfs 
-                cd ../
+                mv binary/*/filesystem.squashfs ${ND}/${NAME}.squashfs
 
             fi
             for BINARY in $( ls binary[.,-]* )
