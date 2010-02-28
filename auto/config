@@ -1,14 +1,12 @@
 #!/bin/sh
-MIRROR_BINARY="http://ftp.egr.msu.edu/debian/"
-MIRROR_BINARY_SECURITY="http://ftp.ch.debian.org/debian-security/"
 BOOTAPPEND="locale=es_MX.UTF-8 keyb=la-latin1"
 LH_SYSLINUX_MENU_LIVE_ENTRY="Incia"
 LH_SYSLINUX_MENU_LIVE_FAILSAFE_ENTRY="Modo a Prueba de Fallos"
 LH_SYSLINUX_MENU_MEMTEST_ENTRY="Prueba de RAM"
 
-MIRROR_DEBIAN="http://localhost:9999/debian"
+MIRROR_DEBIAN="http://ftp.mx.debian.org/debian"
 MIRROR_SECURITY="http://localhost:9999/security/"
-MIRROR_BINARY="http://ftp.egr.msu.edu/debian/"
+MIRROR_BINARY=${MIRROR_DEBIAN}
 MIRROR_BINARY_SECURITY="http://ftp.ch.debian.org/debian-security/"
 
     #--mirror-debian-installer http://localhost:9999/acervo \
@@ -17,17 +15,17 @@ lh config noautoconfig \
 	--apt-recommends disabled \
     --debian-installer live \
     --debian-installer-distribution squeeze \
+    --debian-installer-gui false \
 	--distribution lenny \
     --architecture i386 \
-	--linux-flavours flujos \
-    --linux-packages linux-image-2.6.31-rt11 \
+	--linux-flavours rt19 \
+    --linux-packages linux-image-2.6.31.6 \
     --archive-areas "main contrib non-free" \
     --mirror-bootstrap ${MIRROR_DEBIAN} \
 	--mirror-chroot ${MIRROR_DEBIAN} \
 	--mirror-chroot-security ${MIRROR_SECURITY} \
 	--mirror-binary ${MIRROR_BINARY} \
 	--mirror-binary-security ${MIRROR_BINARY_SECURITY} \
-	--packages-lists flujos \
     --hooks "rm_from_init_d.sh mpd_per.sh" \
     --language es \
     --bootappend-live $BOOTAPPEND \
