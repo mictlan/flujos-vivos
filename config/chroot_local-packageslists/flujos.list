@@ -109,8 +109,8 @@ xfce4-wmdock-plugin
 xfce4-xkb-plugin
 ecasound
 gstreamer0.10-plugins-bad
-#wicd
 network-manager
+network-manager-gnome
 ffmpeg
 xarchiver
 thunar-archive-plugin
@@ -125,6 +125,8 @@ samba
 ihu
 dbus-x11
 traverso
-live-installer-launcher
 lvm2
 bzip2
+live-initscripts
+live-installer-launcher
+live-helper
