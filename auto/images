@@ -8,10 +8,8 @@ FLAVOURS="-flujos"
 #ARCHITECTURE="$(dpkg --print-architecture)"
 ARCHITECTURE="i386"
 DATE=$(date +%Y%m%d)
-VERSION="1.0.2"
+VERSION=1.0.3
 NAME="flujos-vivos-${VERSION}-${DISTRIBUTIONS}-${ARCHITECTURE}"
-CHKSUM=md5sum
-ZSYNC=zsyncmake
 
 genBinary ()
 {
@@ -20,7 +18,7 @@ genBinary ()
         {
            
             lh clean --purge
-
+            
             #if [ -e .stage ]
             #    lh clean --purge
             #then
@@ -28,7 +26,7 @@ genBinary ()
 
             rm -rf cache/packages*
             rm -rf cache/stages_rootfs 
-            
+            echo "Build ${FNAME}"
             lh config -b ${TYPE}
             lh build 2>&1 | tee ${FNAME}.log
             echo "copying to ${FNAME}"
