@@ -17,7 +17,6 @@ abiword
 abiword-plugins 
 aircrack-ng 
 gcalctool 
-#tomboy 
 myspell-es 
 mpd 
 sonata 
@@ -69,13 +68,13 @@ qjackctl
 soundconverter
 ntfs-3g
 cryptsetup
-gnusound
+#gnusound
 sound-juicer
 #serpentine
 brasero
 ardour
 idjc
-libasound2-plugins
+#libasound2-plugins
 xfce4-cellmodem-plugin
 xfce4-cpufreq-plugin
 xfce4-dict-plugin
