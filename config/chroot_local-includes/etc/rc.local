@@ -4,7 +4,7 @@
 
 # Detect partitions (non-swap) and mount them
 # See /sbin/diskmounter.sh for supported filesystems
-/sbin/diskmounter.sh -r
+#/sbin/diskmounter.sh -r
 
 #/usr/bin/jack_plumbing start
 #sudo startx
