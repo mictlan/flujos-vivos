@@ -27,7 +27,7 @@ do
          ${CHKSUM} ${FNAME}.squashfs > ${FNAME}.squashfs.${CHKSUM}
        ;;
       net)
-          zsyncmake ${FNAME}-net.tar.gz -u $(echo $URLS | awk '{ print $1}')/${dir}/${FNAME}-net.tar.gz -u $(echo $URLS |awk '{ print $2}')/${dir}/${FNAME}-net.tar.gz
+          zsyncmake ${FNAME}-net.tar.gz -u $(echo $URLS | awk '{ print $1}')/${dir}/${FNAME}-net.tar.gz -u $(echo $URLS |awk '{ print $2}')/${dir}/${FNAME}-net.tar.gz -b 2048
         ${CHKSUM} ${FNAME}-net.tar.gz > ${FNAME}-net.tar.gz.${CHKSUM}
        ;;
      esac
