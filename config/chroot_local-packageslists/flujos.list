@@ -39,6 +39,10 @@ inkscape
 create-resources
 audacity
 jack-tools
+jackd
+libasound2
+audacious-plugins
+#gtk2-engines-pixbuf
 timemachine
 transmission
 audacious
