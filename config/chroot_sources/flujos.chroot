@@ -1,1 +1,1 @@
-deb http://acervo.org:9999/flujos lenny flujos
+deb http://apt.acervo.org/debian stable-flujos main contrib non-free

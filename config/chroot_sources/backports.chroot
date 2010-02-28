@@ -1,1 +1,1 @@
-deb http://localhost:9999/backports lenny-backports main contrib 
+deb http://www.backports.org/debian lenny-backports main contrib non-free
