@@ -41,7 +41,7 @@ jack-tools
 jackd
 libasound2
 audacious-plugins
-#gtk2-engines-pixbuf
+gtk2-engines-pixbuf
 timemachine
 transmission
 audacious
@@ -124,7 +124,8 @@ auto-apt
 flujconf
 gnash
 clamav
-samba
+#samba
+smbclient
 ihu
 dbus-x11
 traverso
