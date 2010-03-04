@@ -74,7 +74,7 @@ sound-juicer
 brasero
 ardour
 idjc
-#libasound2-plugins
+libasound2-plugins
 xfce4-cellmodem-plugin
 xfce4-cpufreq-plugin
 xfce4-dict-plugin
