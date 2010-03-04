@@ -23,6 +23,7 @@ sonata
 listen
 flac
 vorbis-tools
+oggfwd
 vlc 
 vlc-plugin-jack
 darkice
