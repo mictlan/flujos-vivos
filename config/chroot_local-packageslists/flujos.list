@@ -131,5 +131,6 @@ traverso
 lvm2
 bzip2
 live-initscripts
+fv-initscripts
 live-installer-launcher
 live-helper
