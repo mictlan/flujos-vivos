@@ -14,6 +14,10 @@ Package: libgtk2.0-common
 Pin: release a=lenny-backports
 Pin-Priority: 999
 
+Package: gtk2-engines-pixbuf
+Pin: release a=lenny-backports
+Pin-Priority: 999
+
 Package: pidgin
 Pin: release a=lenny-backports
 Pin-Priority: 999
