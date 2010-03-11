@@ -1,4 +1,6 @@
-audio_device_state:1:mpd
+audio_device_state:1:alsa_MPD
+audio_device_state:1:jack_MPD
+audio_device_state:0:Flujos-Vivos
 state: stop
 random: 0
 repeat: 1 
