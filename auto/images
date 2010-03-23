@@ -8,8 +8,9 @@ FLAVOURS="-flujos"
 #ARCHITECTURE="$(dpkg --print-architecture)"
 ARCHITECTURE="i386"
 DATE=$(date +%Y%m%d)
-VERSION=1.0.3
+VERSION=1.0.5
 NAME="flujos-vivos-${VERSION}-${DISTRIBUTIONS}-${ARCHITECTURE}"
+ISOHYBRID_OPTS="-entry 4 -type 1c"
 
 genBinary ()
 {
@@ -33,6 +34,14 @@ genBinary ()
             if [ ! -d ${DNAME} ]; then
                 mkdir ${DNAME}
             fi
+           if [ "${LH_BINARY_IMAGES}" = iso ]; then
+              if [ -x "`which isohybrid`" -a "${LH_ARCHITECTURE}" = 'i386' ]; then
+             echo "Turning the ISO image into a hybrid one..."
+             isohybrid $ISOHYBRID_OPTS "binary[.,-]${EXT}"
+              else
+             echo "isohybrid was not found, the ISO image won't be a hybrid one"
+              fi
+           fi
 
             mv binary[.,-]${EXT} ${DNAME}/${FNAME}
             if [ ${TYPE} = "iso" ]; then
