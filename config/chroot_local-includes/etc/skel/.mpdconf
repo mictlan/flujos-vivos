@@ -83,8 +83,10 @@ default_permissions             "read,add,control,admin"
 audio_output {
         type                    "alsa"
         name                    "alsa_MPD"
-        device                  "default" 	#"hw:0,0"
+        options                 "dev=dmixer"
+        device                  "plug:dmix"
         format                  "44100:16:2" # optional
+
 }
 audio_output {
         type                    "jack"
