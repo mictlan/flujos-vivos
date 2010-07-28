@@ -8,8 +8,10 @@
 # set console font to the smallest size
 setfont /usr/share/consolefonts/lat0-08.psf.gz
 
+IUSER=radioplanton
+
 # create a custom screenrc just for flujos
-cat > /home/radio/.screenrc-flujos <<-EOF
+cat > /home/${IUSER}/.screenrc-flujos <<-EOF
 	startup_message off
 	screen 0 /usr/bin/ecasignalview -o alsa
 	split

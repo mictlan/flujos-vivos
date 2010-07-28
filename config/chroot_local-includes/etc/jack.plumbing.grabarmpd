@@ -8,6 +8,7 @@
 (connect "flujos-niveles:meter_2" "MPD:right")
 (connect "MPD:left" "system:playback_1")
 (connect "MPD:right" "system:playback_2)
+(connect "MPD:left" "darkice-[1-9].*:left")
 (connect "MPD:left" "sysrec:left")
 (connect "MPD:right" "sysrec:right")
 (connect "system:capture_1" "sysrec:left")
