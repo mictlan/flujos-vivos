@@ -4,7 +4,7 @@
 # You can put symlinks in here, if you like. Make sure that
 # the user that mpd runs as (see the 'user' config parameter)
 # can read the files in this directory.
-music_directory     "/home/radio/Musica"
+music_directory     "/home/radio/Música"
 playlist_directory	"/home/radio/.mpd/playlists"
 db_file			"/home/radio/.mpd/tag_cache"
 log_file		"/var/log/mpd/mpd.log"

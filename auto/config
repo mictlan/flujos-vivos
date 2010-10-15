@@ -1,25 +1,24 @@
 #!/bin/sh
-BOOTAPPEND="locale=es_MX.UTF-8 keyb=la-latin1"
+BOOTAPPEND="locales=es_MX.UTF-8 keyboard-layout=latam"
 LH_SYSLINUX_MENU_LIVE_ENTRY="Incia"
 LH_SYSLINUX_MENU_LIVE_FAILSAFE_ENTRY="Modo a Prueba de Fallos"
 LH_SYSLINUX_MENU_MEMTEST_ENTRY="Prueba de RAM"
 
-MIRROR_DEBIAN="http://ftp.mx.debian.org/debian"
+MIRROR_DEBIAN="http://localhost:9999/debian"
 MIRROR_SECURITY="http://localhost:9999/security/"
-MIRROR_BINARY=${MIRROR_DEBIAN}
+MIRROR_BINARY="http://ftp.ch.debian.org/debian/"
 MIRROR_BINARY_SECURITY="http://ftp.ch.debian.org/debian-security/"
 
     #--mirror-debian-installer http://localhost:9999/acervo \
     #--categories "main contrib non-free" \
-lh config noautoconfig \
+lb config noauto \
 	--apt-recommends disabled \
     --debian-installer live \
     --debian-installer-distribution squeeze \
     --debian-installer-gui false \
-	--distribution lenny \
+    --win32-loader false \
+	--distribution squeeze \
     --architecture i386 \
-	--linux-flavours rt19 \
-    --linux-packages linux-image-2.6.31.6 \
     --archive-areas "main contrib non-free" \
     --mirror-bootstrap ${MIRROR_DEBIAN} \
 	--mirror-chroot ${MIRROR_DEBIAN} \
@@ -29,7 +28,7 @@ lh config noautoconfig \
     --hooks "rm_from_init_d.sh mpd_per.sh" \
     --language es \
     --bootappend-live $BOOTAPPEND \
-    --hostname flujos.org \
+    --hostname flujos.local \
 	--iso-application "Flujos Vivos" \
     --iso-volume "flujos-vivos" \
     --iso-publisher "radio.flujos.org" \
