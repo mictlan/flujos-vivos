@@ -2,9 +2,9 @@
 
 DIRS="usb-hdd iso-cdrom net squashfs"
 
-lh clean noautoconfig --all ${@}
+lb clean noauto --all ${@}
 
-rm -f build.log
+rm -f *.log
 
 # Remove generated files
 rm -f config/binary config/bootstrap config/chroot config/common config/source
