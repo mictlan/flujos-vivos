@@ -1,0 +1,17 @@
+#!/bin/sh
+
+OD=$(pwd)
+
+# actualizar fuente
+echo actualizando wiki con 'git pull'
+cd wiki/src
+git pull
+cd ${OD}
+
+# construir wiki
+echo compilando wiki
+ikiwiki --setup wiki.setup -refresh ${@}
+
+# clonar fuente a carpeta de usuario src/wiki 
+#mkdir config/chroot_local-includes/etc/skel/src
+#git clone wiki/src config/chroot_local-includes/etc/skel/src/wiki
