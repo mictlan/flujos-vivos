@@ -1,0 +1,1 @@
+/usr/share/live/build/examples/hooks/all_chroot_hal-automount.sh
