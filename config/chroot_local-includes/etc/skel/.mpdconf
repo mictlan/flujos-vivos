@@ -150,7 +150,7 @@ audio_output {
 # If you want MPD to adjust the volume of audio sent to the
 # audio outputs, you can tell it to use the software mixer:
 #
-#mixer_type                      "software"
+mixer_type                      "software"
 #
 ################################################################
 
