@@ -14,8 +14,8 @@ alsa-base alsa-utils
 keyboard-configuration
 #endif
 
-## LH: Xfce
+## LH: lxde 
 #include <standard-x11>
-xfce4
+lxde
 desktop-base nodm
 
