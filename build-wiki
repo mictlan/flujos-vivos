@@ -3,9 +3,9 @@
 OD=$(pwd)
 
 # actualizar fuente
-echo actualizando wiki con 'git pull'
-cd wiki/src
-git pull
+echo  'clonando manual de flujos.org'
+cd wiki/
+git clone git@flujos.org:manual.git src
 cd ${OD}
 
 # construir wiki
