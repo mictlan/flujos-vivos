@@ -5,12 +5,12 @@ OD=$(pwd)
 # actualizar fuente
 echo  'clonando manual de flujos.org'
 cd wiki/
-git clone git@flujos.org:manual.git src
+git clone /home/kev/.usr/src/flujos/manual src
 cd ${OD}
 
 # construir wiki
 echo compilando wiki
-ikiwiki --setup wiki.setup -refresh ${@}
+ikiwiki --setup wiki.setup --refresh ${@}
 
 # clonar fuente a carpeta de usuario src/wiki 
 #mkdir config/chroot_local-includes/etc/skel/src
