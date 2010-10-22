@@ -47,7 +47,7 @@ transmission
 #mousepad
 pidgin-encryption
 pidgin
-xfburn
+#xfburn
 #pygiss
 #theorastreamer
 gftp
@@ -73,7 +73,7 @@ sound-juicer
 ardour
 idjc
 libasound2-plugins
-exo-utils
+#exo-utils
 #xfce4-goodies
 #xfce-keyboard-shortcuts
 #xfce4-volumed

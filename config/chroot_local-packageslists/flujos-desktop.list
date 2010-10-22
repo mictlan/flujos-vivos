@@ -7,7 +7,7 @@ console-setup console-common kbd
 locales
 gettext
 
-xserver-xfbdev
+#xserver-xfbdev
 xresprobe menu
 alsa-base alsa-utils
 
@@ -18,5 +18,6 @@ keyboard-configuration
 ## LH: lxde 
 #include <standard-x11>
 lxde
+openbox
 desktop-base nodm
 
