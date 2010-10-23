@@ -3,7 +3,7 @@
 ## LH: FrameBuffer X11
 #include <minimal>
 console-setup console-common kbd
-
+xfce4
 locales
 gettext
 
@@ -15,8 +15,5 @@ alsa-base alsa-utils
 keyboard-configuration
 #endif
 
-## LH: lxde 
-#include <standard-x11>
-lxde
 desktop-base nodm
 
