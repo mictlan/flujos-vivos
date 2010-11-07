@@ -1,22 +1,17 @@
 #!/bin/sh
 
+# guardamos ubicacion actual en un variable 
 OD=$(pwd)
 
-# actualizar fuente
-echo actualizando fuente de manual
-cd /home/kev/.usr/src/flujos/manual
-sudo -u kev git pull
-cd ${OD}
+# uri al fuente del manual
+MAN_FUENTE="git://github.com/mictlan/fv-manual.git"
 
+# clonar manual localmente
 echo  'clonando manual de flujos.org'
 cd wiki/
-git clone /home/kev/.usr/src/flujos/manual src
+git clone ${MAN_FUENTE} src
 cd ${OD}
 
 # construir wiki
 echo compilando wiki
 ikiwiki --setup wiki.setup --refresh ${@}
-
-# clonar fuente a carpeta de usuario src/wiki 
-#mkdir config/chroot_local-includes/etc/skel/src
-#git clone wiki/src config/chroot_local-includes/etc/skel/src/wiki
