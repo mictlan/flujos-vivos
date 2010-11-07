@@ -8,6 +8,7 @@ MAN_FUENTE="git://github.com/mictlan/fv-manual.git"
 
 # clonar manual localmente
 echo  'clonando manual de flujos.org'
+mkdir wiki
 cd wiki/
 git clone ${MAN_FUENTE} src
 cd ${OD}

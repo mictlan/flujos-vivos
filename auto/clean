@@ -14,6 +14,6 @@ rm -fr cache
 find config/ -depth -type d -empty -exec rmdir {} \;
 
 # remove compiled wiki
-rm -rf config/chroot_local-includes/usr/share/doc/flujos-vivos/html/  wiki/src/.ikiwiki wiki/src
+rm -rf config/chroot_local-includes/usr/share/doc/flujos-vivos/html/  wiki/src/.ikiwiki wiki/
 # remove fuente de wiki de systema vivo
 rm -rf config/chroot_local-includes/etc/skel/src
