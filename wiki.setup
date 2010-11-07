@@ -18,9 +18,9 @@ use IkiWiki::Setup::Standard {
 	# where the source of the wiki is located
 	srcdir => 'wiki/src',
 	# where to build the wiki
-	destdir => 'config/binary_local-includes/doc/flujos/wiki',
+	destdir => 'config/chroot_local-includes/usr/share/doc/flujos-vivos/html',
 	# base url to the wiki
-	url => 'http://flujos.local',
+	url => 'http://flujos-vivos',
 	# url to the ikiwiki.cgi
 	cgiurl => '',
 	# filename of cgi wrapper to generate
