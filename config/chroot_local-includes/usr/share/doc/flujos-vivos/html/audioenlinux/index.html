@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<title>audioenlinux</title>
+
+<link rel="stylesheet" href="../style.css" type="text/css" />
+
+<link rel="stylesheet" href="../local.css" type="text/css" />
+
+
+
+
+
+</head>
+<body>
+
+<article class="page">
+
+<section class="pageheader">
+<header class="header">
+<span>
+<span class="parentlinks">
+
+<a href="../">flujos-vivos</a>/ 
+
+</span>
+<span class="title">
+audioenlinux
+
+</span>
+</span>
+
+</header>
+
+
+<nav class="actions">
+<ul>
+
+
+<li><a href="../recentchanges/">RecentChanges</a></li>
+
+
+
+
+
+
+
+
+</ul>
+</nav>
+
+
+
+
+</section>
+
+
+
+<div id="pagebody">
+
+<section id="content">
+<h1><a name="index1h1"></a>Audio en linux</h1>
+
+<div class="toc">
+<ol>
+	<li class="L1"><a href="#index1h1">Audio en linux</a>
+	<ol>
+		<li class="L2"><a href="#index1h2">Introducción al audio en linux</a>
+		</li>
+		<li class="L2"><a href="#index2h2">Unos apuntes sobre el sonido</a>
+		<ol>
+			<li class="L3"><a href="#index1h3">Direccionalidad</a>
+			</li>
+			<li class="L3"><a href="#index2h3">Sobresaturación</a>
+			</li>
+			<li class="L3"><a href="#index3h3">Sonidos pixeleados</a>
+			</li>
+		</ol>
+		</li>
+		<li class="L2"><a href="#index3h2">Quién es el kernel</a>
+		<ol>
+			<li class="L3"><a href="#index4h3">Qué hace el kernel</a>
+			</li>
+			<li class="L3"><a href="#index5h3">Manejo de recursos</a>
+			</li>
+			<li class="L3"><a href="#index6h3">Real time Operating System (Sistema Operativo de tiempo real)</a>
+			</li>
+			<li class="L3"><a href="#index7h3">Latencia</a>
+			</li>
+			<li class="L3"><a href="#index8h3">Qué son los módulos</a>
+			</li>
+		</ol>
+		</li>
+		<li class="L2"><a href="#index4h2">Quién es ALSA</a>
+		<ol>
+			<li class="L3"><a href="#index9h3">Qué hace ALSA</a>
+			</li>
+			<li class="L3"><a href="#index10h3">Con quién es compatible ALSA</a>
+			</li>
+			<li class="L3"><a href="#index11h3">ALSAMIXER</a>
+			</li>
+			<li class="L3"><a href="#index12h3">Cómo configuro mi tarjeta de sonido</a>
+			</li>
+		</ol>
+		</li>
+		<li class="L2"><a href="#index5h2">Tarjeta de audio externa</a>
+		</li>
+		<li class="L2"><a href="#index6h2">Qué es JACk</a>
+		</li>
+		<li class="L2"><a href="#index7h2">Reproductores de audio libres</a>
+		<ol>
+			<li class="L3"><a href="#index13h3">Enlaces</a>
+			</li>
+		</ol>
+		</li>
+	</ol>
+	</li>
+</ol>
+</div>
+
+<h2><a name="index1h2"></a>Introducción al audio en linux</h2>
+
+<p>Hay muchas buenas razones para utilizar los sistemas operativos Linux. Antes de sumergirnos de lleno en los mares de los programas de código fuente abierta, tenemos que saber cuáles serán las ventajas y desventajas de Linux. Veamos primero de qué ventajas estamos hablando: </p>
+
+<ul>
+<li>Todas las aplicaciones de Linux de código fuente abierto manejan formatos libres no propietarios de muy buena calidad.</li>
+<li>Encontrarás un mundo de reproductores y aplicaciones a explorar, que se pueden conseguir en la red de forma gratuita y que se adecúan a tus necesidades.</li>
+<li>Aplicaciones para todas las necesidades, encontrarás mucha similitud en las aplicaciones que manejan los sistemas propietarios.    </li>
+<li>Aplicaciones e instrucciones lógicas que te permiten entender los procesos que el sistema realiza, de forma que puedas modificar configuraciones en tus dispositivos de hardware y tus aplicaciones.</li>
+<li>Puedes poner a trabajar varias aplicaciones y conectarlas entre sí, a través de tus entradas y salidas de audio. </li>
+<li>Puedes personalizar el uso de las herramientas de audio.</li>
+<li>Hay una comunidad a través de los foros de Linux que ofrece ayuda en línea y en todos los idiomas, así, mientras más experimentamos más aprendemos.</li>
+<li>Actualización constante de las aplicaciones, así como del kernel.</li>
+<li>Código fuente abierto.</li>
+<li>Se garantiza su acceso y almacenamiento al no haber licencia.</li>
+<li>Es GRATIS!!!!</li>
+</ul>
+
+<p>También hay que tomar en cuenta aquellas desventajas de Linux, para tomar decisiones sobre si convertir un equipo a Linux o hacer una partición en el disco. Las distribuciones de Linux reconocen aplicaciones de fuente cerrada y propietarios. Hay desarrollo de módulos y drivers para que funcionen con tu hardware, pero en ocasiones ocurre que:
+   - Los drivers de componentes de tu computadora, (tarjeta de audio, de vídeo, tarjeta de red) son códigos de fuente cerrado. Linux o el software libre no siempre son compatibles por falta de información que está cerrada. Sin embargo, tienes que revisar en los foros de Linux para ver si existe el módulo para tu hardware, esto lo haces buscando el modelo.
+   - Hay algunos proyectos que no han tenido soporte en su desarrollo. Las mismas aplicaciones a veces se vuelven obsoletas por la aparición de una nueva aplicación.
+   - En ocasiones el audio no funciona, eso dependerá de tu kernel y de las versiones de tus aplicaciones. Por eso tienes que revisar que todo sea compatible. Esto no es tan terrible, generalmente las cosas funcionan, pero si tienes problemas entonces puedes ir a los foros. Como Linux tiene una gran comunidad de experimentación, seguramente hay alguien o muchos que han tenido los mismos problemas que tú y tal vez ya encontraron una solución.
+   - A veces sucede que cuando actualizas el kernel se deshabilitan algunas funciones. Tienes que revisar esto, pues si has hecho modificaciones tal vez cuando actualices tu sistema tendrás que volver a hacerlo. flujos vivos
+   - Esta herramienta que tienes en tus manos, el Live CD, ha sido construido para permitirte realizar un streaming de radio, tiene varias aplicaciones que han sido compiladas y configuradas para ser compatibles. Todo está diseñado para que funcione lo más sencillo posible.
+   - Hemos creado manuales de uso y configuración para que puedas experimentar con las aplicaciones, todo con la intención de que te sea más fácil navegar en estos mares de Linux.
+   - En este capítulo de Audio en Linux, encontrarás la sección sobre el Kernel para entender cómo funcionan los sistemas en Linux. También información sobre el ALSA, el controlador de audio con el que trabajaremos. El servidor JACK, también es una herramienta que utilizaremos. Algunos mini manuales para utilizar los reproductores de audio en Linux. Y también aprenderás a detectar y configurar tu tarjeta de audio en Linux. ¡Disfruta tu navegación en los mares de este Live CD!.</p>
+
+<h2><a name="index2h2"></a>Unos apuntes sobre el sonido</h2>
+
+<p>Para trabajar juntxs sobre las cuestiones sonoras, será más fácil si todxs compartimos unas ideas básicas sobre el sonido. Compilando unas definiciones comunes, se puede decir que el sonido se genera cuando un cuerpo, al vibrar, introduce perturbaciones en un medio elástico determinado. Estas perturbaciones se propagan en forma de ondas que llegan hasta los oídos del receptor (o hasta algún dispositivo de captación). Desde un punto de vista humano, sonido significa, sobre todo, ondas sonoras de la presión del aire que se pueden percibir. Eso se logra por medio de un proceso mecánico en el oído humano, captado y decodificado por el cerebro. Hablando de las ondas, éstas se caracterizan por varias propiedades: su longitud, su periodo, sus ciclos, etc. Son importantes, sobre todo, la amplitud y la frecuencia de una onda. La amplitud refleja la máxima distancia que alcanza un cuerpo al vibrar, un hecho que está vinculado directamente con la intensidad con que se percibe el sonido. La frecuencia (que se mide en Hertz) informa cuántos ciclos completos se producen en la unidad de tiempo. Las cuatro cualidades básicas para distinguir las ondas sonoras son: Volumen (Intensidad del sonido) Describe qué tanto truena un sonido. La unidad más común para medir el volumen es el decibel. El umbral de audición empieza a decibel 0. El volumen de un estudio de grabación en silencio, por ejemplo, es aproximadamente de 20 decibeles. El umbral del dolor en el oído humano empieza a 139 decibeles, superado por un avión a reacción que llega hasta 150 decibeles. La intensidad del sonido está vinculada directamente con la amplitud (la vibración) de la onda sonora y la dinámica del sonido en general. Es la suma de todos los componentes de un sonido y la respuesta de nuestro sistema auditivo para las distintas frecuencias. La intensidad sonora no es una calidad linear, uno tiene que subir diez veces la amplitud del sonido para que se perciba una duplicación de la intensidad.</p>
+
+<p>Duración Nos informa sobre la extensión de un sonido en el tiempo. Toma en cuenta cuánto tiempo un emisor (ej. un tambor) ha sido estimulado (cuánto tiempo la mano toca el tambor) y cuánto tiempo tarda (el emisor) en extinguir el sonido. El oído humano no forzosamente notará cada sonido que sale de un emisor; si dura más de veinte por segundo, nada más percibirá un único sonido. Altura La sensación de la altura tiene que ver con la frecuencia de un sonido. Cuanto mayor sea la frecuencia de un sonido, más alto (agudo) se siente el tono. El ser humano es capaz de percibir frecuencias entre 20 Hertz (Hz) y 20 Kilohertz (kHz). Abajo de este espectro se encuentran los infrasonidos, arriba los ultrasonidos. Timbre Se podría decir que es el color de un sonido. Por ejemplo, dos violines van a producir un tono de la misma altura (el C alta) pero también sonarán diferentes, debido a características como el tipo de la madera, por ejemplo. Entonces, el timbre nos dice mucho sobre las diferentes propiedades de una fuente de sonido. El conjunto de esas propiedades crea un timbre especial. Hay muchas maneras para distinguir y describir las experiencias sonoras. Aquí encontrarás dos ideas para afinar tus oídos. Complejidad Categoría por la cual se define si un sonido es simple, es decir, compuesto por una sola onda, o complejo, formado por varias frecuencias que se producen simultáneamente. Aparte de los tonos puros, todos los sonidos son complejos y a veces se pueden distinguir varios componentes (ej. una pista de música).</p>
+
+<h3><a name="index1h3"></a>Direccionalidad</h3>
+
+<p>Define de dónde viene un sonido, cuántas fuentes sonoras tiene (ej. un dispositivo 5.1 de bocinas), si se trata de un sonido estático o en movimiento, respecto al oyente, etc. Aunque esa categoría no es un concepto básico de la acústica, conviene reflexionar sobre esta dimensión porque es importante cuando uno graba sonidos y también cuando uno monta una pista sonora (ej. manipulación del efecto estéreo) .</p>
+
+<p>Y finalmente, una breve distinción del audio analógico y el audio digital. El concepto de sonido analógico se refiere sobre todo a la técnica por la cual se captura el sonido y se almacena en señales analógicas. Se distinguen tres métodos respectivos de grabación: mecánica (ej. disco de vinil), magnética (ej. casette) y óptica. Para reproducir estos sonidos grabados se necesita un traductor electroacústico (ej. bocinas) para crear otra vez ondas audibles.</p>
+
+<p>El sonido digital comparte esta necesidad de traducirse en ondas sonoras. Pero primero recurre al código binario (información codificada por los valores de ceros y unos) para guardar una señal eléctrica que representa una onda sonora.</p>
+
+<p>Las transmisiones del streaming en la red se hacen a través de la codificación digital. La información sonora (recibida por ejemplo, por un micrófono conectado a la computadora) se codifica para el transporte hacia la computadora receptora. El audio digital comparte propiedades acústicas con el sonido almacenado de una manera analógica. En ambos casos, se puede sobresaturar la captación o reproducción de un sonido.</p>
+
+<h3><a name="index2h3"></a>Sobresaturación</h3>
+
+<p>Efecto que ocurre cuanto un señal sobrepasa el máximo punto de sensibilidad de un canal de entrada (ej. micrófono) o salida (ej. bocinas). Así se producen distorsiones armónicas (THD) que influyen en la calidad de la señal. Eso pasa muchas veces durante el streaming, cuando la señal de salida (ej. voz, música, mezclas) está demasiado fuerte y llega distorsionada a los reproductores. Por eso siempre conviene monitorear.</p>
+
+<p>Otra cosa, una calidad muy particular del sonido digital es la pixelación de la señal.</p>
+
+<h3><a name="index3h3"></a>Sonidos pixeleados</h3>
+
+<p>Término que describe sonidos comprimidos (en su complejidad) que tienen un timbre metálico (ej. voces robóticas). Con sonidos más comprimidos, el sonido tendrá un efecto más pixeleado, es decir, que habrá pérdida de datos que componen ese sonido y eso se reflejará en el sonido que será emitido. Hay que encontrar un balance entre la accesibilidad del stream (mandar sonidos altamente comprimidos permite escuchar con conexiones lentas de internet) y la calidad (cuando una pista musical se escucha muy mal.).</p>
+
+<h2><a name="index3h2"></a>Quién es el kernel</h2>
+
+<p>Definido como el núcleo, el Kernel es el corazón de tu Sistema Operativo. La palabra se deriva de la raíz germánica Kern. Es el software que dialoga entre los programas del sistema operativo y el hardware de la computadora. En términos menos abstractos, es el programa que interactúa entre los programas de la computadora y sus partes físicas. El Kernel es quien decide qué programa, cómo y cuando tendrá acceso a los recursos del sistema, así como a los dispositivos del hardware; esto se conoce como multiplexado. Utiliza una interfaz de sistema de llamado (syscall) para dialogar con las aplicaciones y poder gestionar los recursos. También se encarga de crear una interfaz clara, con la finalidad de facilitar el uso para el programador. Todas las operaciones y diálogos que se establecen entre los programas del sistema y los recursos del hardware son procesados por el Kernel.</p>
+
+<h3><a name="index4h3"></a>Qué hace el kernel</h3>
+
+<p>El Kernel se encarga de asegurar la carga y ejecución de los procesos, controlar las entradas/salidas y crear una interfaz entre sí mismo y el usuario. Se puede pensar en el kernel como un guardián. Cuando una aplicación necesita algo, requiere acceso a recursos del hardware. Por lo tanto, el kernel es el guardián intermediario entre la aplicación y los recursos.</p>
+
+<p>Se encarga de:</p>
+
+<ul>
+<li>La comunicación entre los programas informáticos y el hardware.</li>
+<li>Gestión de los distintos programas informáticos (tareas) de una máquina.</li>
+<li>Gestión del hardware (memoria, procesador, periférico, forma de almacenamiento, etc.)</li>
+</ul>
+
+<h3><a name="index5h3"></a>Manejo de recursos</h3>
+
+<p>El Kernel es también responsable del manejo de recursos. Al recibir un llamado de recursos, el Kernel genera una respuesta, por ejemplo a través de una aplicación. Supongamos que queremos abrir un editor de textos, el papel del Kernel no sólo será de dialogar con el sistema para que se ejecute, sino también se asegurará que la computadora tenga el espacio suficiente de memoria para que el programa se ejecute.</p>
+
+<p>Para saber qué versión de kernel tienes, utiliza el siguiente comando:</p>
+
+<p>Esto te está indicando que tu kernel es el 2.6.24-24 rt. En esta versión del kernel en específico, estos números significan lo siguiente:</p>
+
+<ul>
+<li>2: versión</li>
+<li>6: actualización</li>
+<li>24: revisión</li>
+<li>24: revisión Debian</li>
+<li>rt: real time</li>
+</ul>
+
+<h3><a name="index6h3"></a>Real time Operating System (Sistema Operativo de tiempo real)</h3>
+
+<p>Significa que es un sistema operativo que puede realizar varias tareas en tiempo real (real time). Un sistema operativo va a responder a un evento particular, cuando realiza varias tareas a la vez durante un periodo de tiempo; esto se refiere a qué tan rápido o predecible es. Los sistemas real time tienen un límite de tiempo para su respuesta.</p>
+
+<h3><a name="index7h3"></a>Latencia</h3>
+
+<p>El periodo de respuesta está relacionado con la latencia, los retardos temporales, es decir, el tiempo que toma para que una acción se ejecute. Por ejemplo, al ejecutar un stream de audio, el receptor del stream da una señal de audio con un retardo de unos 3 segundos, que es el tiempo que tarda el audio en llegar. Depende de la latencia, y ésta a su vez dependerá del tamaño de paquetes transmitidos y del tamaño de los buffers, en el equipo que se conectará a la red.</p>
+
+<p>Cuando utilizamos una aplicación de captura de audio, si el sistema operativo está realizando varias tareas al mismo tiempo, el sistema real time va a dar prioridad a la aplicación de audio que estemos utilizando. Evitando así, la pérdida de información en la captura del audio.</p>
+
+<h3><a name="index8h3"></a>Qué son los módulos</h3>
+
+<p>A partir de la versión 2, el kernel consta de dos partes:</p>
+
+<ol>
+<li>el kernel o núcleo en sí: una sola pieza, activa en todo momento.</li>
+<li>los módulos: extensiones del kernel que no están cargados en la memoria todo el tiempo, únicamente se cargan cuando hay una llamada al hardware.</li>
+</ol>
+
+<p>Los módulos son pedazos del kernel que agregan características al mismo. En ocasiones pueden ser los controladores que el kernel utiliza para poder manejar un dispositivo o parte del hardware. Para que el hardware funcione correctamente hay que cargar los módulos correspondientes. Al momento de compilar el kernel, se incluye la lista de módulos; estos pueden ser modificados, cargados y descargados.</p>
+
+<p>Compilar quiere decir que la máquina va a traducir códigos fuente a códigos que la computadora puede leer. Estos se acercan al lenguaje que el ser humano puede entender -en ocasiones es texto- . Una vez hecha la compilación, la computadora puede abrir una aplicación, activar un hardware o realizar alguna actividad en el sistema.</p>
+
+<p>Puedes ver cuál es la lista de módulos en tu sistema, con el siguiente comando:</p>
+
+<p>Si quieres cargar o descargar módulos, utiliza los siguientes comandos:</p>
+
+<p>Decidir qué tipo de kernel utilizar y cómo modificarlo, dependerá de tus necesidades y expectativas. Otro aspecto a tomar en cuenta es el tamaño de memoria que tiene tu computadora. Hay diferentes distribuciones de Linux que son muy avanzadas y que requieren mucho espacio; en una computadora vieja tal vez no funcionarán muy bien, serán lentas o definitivamente no podrás instalarlos por falta de espacio. Existen muchos foros y páginas de internet con información en español para buscar sugerencias y asesorías. La mayoría de las distribuciones de Linux están habilitadas para ser compatibles y funcionar para reproducir audio, realizar un streaming y editar audio. Sin embargo, existen distribuciones especiales para trabajos profesionales de audio y multimedia como Ubuntu Studio o Musix GNU+Linux.</p>
+
+<p>¡Explora los foros para decidir qué distribución es la adecuada según tus necesidades!</p>
+
+<h2><a name="index4h2"></a>Quién es ALSA</h2>
+
+<p>Las siglas de ALSA significan Advanced Linux Sound Architecture que en español quiere decir Arquitectura Avanzada para Sonido en Linux. Es la parte que en otros sistemas operativos conocemos como controladores para poder operar la tarjeta de sonido.</p>
+
+<p>ALSA fue desarrollado por separado del kernel Linux hasta que se introdujo en la serie 2.5 en el año 2002. En la versión 2.6 de Linux, ALSA reemplazó a OSSv3, aunque con este existe una capa de compatibilidad.</p>
+
+<h3><a name="index9h3"></a>Qué hace ALSA</h3>
+
+<p>El ALSA es un proyecto que contiene módulos o controladores que dialogan con el hardware de tu computadora (tarjeta de sonido) para que funcione con software libre. ALSA provee funcionalidad de audio y MIDI para el sistema operativo de Linux.</p>
+
+<p>Las tarjetas de sonido pueden ser distintas: estar integradas con la tarjeta madre; ser una tarjeta PCI conectada a la tarjeta madre; o una tarjeta de sonido USB. Igualmente pueden tener varias entradas y salidas.</p>
+
+<p>Independientemente de la tarjeta de audio que tengas, se necesita un módulo o controlador (device driver) que dialogue con el kernel Linux.</p>
+
+<h4><a name="index1h4"></a>ALSA tiene las siguientes propiedades:</h4>
+
+<ul>
+<li>Soporte eficiente para todo tipo de interfaz de audio, desde interfaces para usuarios comunes hasta interfaces profesionales con múltiples canales.</li>
+<li>Módulos completos de controladores de sonido.</li>
+<li>SMP (Symmetric Multi-Processing, multiproceso simétrico). Buen soporte multiprocesador, se trata de un tipo de arquitectura de ordenadores en que dos o más procesadores comparten una única memoria central y diseño thread-safe (seguridad en hilos en español). Se refiere a un código del sistema que le permite a la computadora funcionar correctamente durante la ejecución simultánea de múltiples tareas.</li>
+<li>Uso de espacio en librerías (alsa-lib) para simplificar la aplicación de programación y proveer más funcionalidad.</li>
+<li>Soporte para el viejo OSS (Open Sound System, Sistema Abierto de Sonido) que provee compatibilidad binaria para la mayoría de los programas OSS. *Mezclado de múltiples canales en hardware.</li>
+<li>Operación Full-duplex. Es la capacidad de grabar y reproducir audio simultáneamente.</li>
+</ul>
+
+<h3><a name="index10h3"></a>Con quién es compatible ALSA</h3>
+
+<p>Una de las ventajas de ALSA frente a OSS, es que tiene mayor soporte para diferentes tarjetas de sonido. Para encontrar información sobre las tarjetas de sonido compatibles con ALSA puedes visitar el siguiente enlace:</p>
+
+<p>http://www.alsa-project.org/main/index.php/Matrix:Main</p>
+
+<h3><a name="index11h3"></a>ALSAMIXER</h3>
+
+<p>La distribución de ALSA viene con un paquete para la configuración de entradas y salidas de audio, llamado ALSAMIXER. Este programa corre en la Terminal. Para una interfaz gráfica en el entorno GNOME y para la navegación con el ratón se puede instalar la versión para escritorio gnome-alsamixer.</p>
+
+<p>Para abrir la aplicación ALSAMIXER, abre la terminal e introduce el comando: </p>
+
+<p>alsamixer</p>
+
+<p>Imagen: La navegacion de Alsamixer</p>
+
+<h3><a name="index12h3"></a>Cómo configuro mi tarjeta de sonido</h3>
+
+<p>Los sistemas modernos de Linux reconocen automáticamente las tarjetas de sonido. Los sistemas Ubuntu por ejemplo, detectan automáticamente la tarjeta de sonido interna y, en caso de que conectes una segunda tarjeta de sonido, el sistema la detectará después de unos segundos. Recuerda que la tarjeta de sonido interna, que el sistema reconoce por defecto, será reconocida por el sistema como “0”; entonces, si conectas otra tarjeta de sonido será reconocida como “1” y así sucesivamente. Para manipular los volúmenes y configuraciones de tu tarjeta puedes utilizar alsamixer, como describimos con anterioridad. En el capítulo Tarjeta de audio externa describimos con más detalle cómo instalar y configurar una tarjeta de audio externa.</p>
+
+<h2><a name="index5h2"></a>Tarjeta de audio externa</h2>
+
+<p>Los Linux modernos son sistemas que reconocen automáticamente los dispositivos externos que conectas a tu computadora, como las tarjetas de audio. En ocasiones después de conectar tu dispositivo debes esperar unos momentos y el sistema lo reconocerá. El proyecto ALSA soporta una gran cantidad de tarjetas de audio, incluso lo más probable es que ALSA ya contenga el módulo necesario para que tu tarjeta de audio funcione. En caso de no ser así tendrás que buscar el módulo y cargarlo. Vamos a ver primero cómo identificar el tipo de tarjeta de audio que tienes.</p>
+
+<p>La mayoría de las veces, las tarjetas de sonido son del tipo PCI, entonces puedes utilizar el comando lspci para obtener la información de la tarjeta de sonido. Si tienes una tarjeta de sonido USB, utiliza el comando lsusb.</p>
+
+<p>Supongamos que vamos a buscar una tarjeta de sonido del tipo PCI, abre tu terminal y escribe el comando:</p>
+
+<p>Veamos un ejemplo:</p>
+
+<p>En este ejemplo, el sistema muestra que tenemos dos tarjetas de sonido:</p>
+
+<p>Una que dice que mi tarjeta es Intel modelo ICH6 y me indica el controlador que utiliza (módulo que habilita el hardware para que se entienda con el sistema):</p>
+
+<p>La segunda es una tarjeta de sonido externa Sound Blaster Audigy2, del fabricante Creative Labs.</p>
+
+<p>Para saber si tu tarjeta de sonido tiene soporte con ALSA , busca en la página del proyecto de ALSA http://bugtrack.alsa-project.org/main/index.php/Matrix:Main</p>
+
+<p>En este ejemplo, la tarjeta de sonido pertenece al proyecto Creative Labs, por lo que vamos a la página SB Audigy 2 ZS y buscamos el módulo que se requiere para su funcionamiento, en este caso es emu10k1.</p>
+
+<p>En el caso de que requieras información más detallada sobre el módulo emu10k1, puedes ir a su página en Details.</p>
+
+<p>Para instalar los módulos requeridos, utilizamos el programa modprobe</p>
+
+<p>Especifica el módulo que quieres inyectar al kernel, en este caso emu10k1:</p>
+
+<p>Revisa que el módulo se halla cargado pidiéndole a modprobe que muestre la lista de módulos:</p>
+
+<p>Para más información sobre la instalación de módulos puedes revisar el capítulo Kernel.</p>
+
+<p>Y para más detalles sobre la instalación de módulos para tarjetas de sonido externas soportadas por ALSA, ve al enlace del proyecto del módulo que tu tarjeta necesita. Ahí encontrarás información sobre el desarrollador, las funciones habilitadas, la instalación, así como los requerimientos de los sistemas.</p>
+
+<p>Una vez instalada tu tarjeta de sonido, ajusta los volúmenes y configura las entradas y salidas de audio. Para hacerlo en la Terminal utiliza alsamixer con el comando -c.</p>
+
+<p>Para acceder a la tarjeta de audio -en este caso la tarjeta interna- utiliza el comando alsamixer identificando la tarjeta con el valor 0:</p>
+
+<p>Y desplegará la pantalla para modificar los volúmenes, entradas y salidas de audio en la tarjeta interna del tipo Intel ICH6:</p>
+
+<p>Para visualizar los controles de alsamixer de la tarjeta de sonido externa del tipo Audigy 2 SZ, utiliza el mismo comando alsamixer -c; en este caso asignando el valor 1 a la tarjeta (recuerda que el sistema reconoce los dispositivos de sonido asignando valores desde 0, 1, 2, 3, 4… y así sucesivamente).</p>
+
+<p>Una vez identificadas tus tarjetas de audio, puedes modificar y asignar tus entradas y salidas de audio. Linux es un sistema operativo bastante lógico en el cual muchas veces los procesos no son automatizados, lo que te da libertad de asignar configuraciones específicas según tus necesidades.</p>
+
+<p>En sistemas propietarios, esta libertad de modificar configuraciones en tus aplicaciones y dispositivos externos de hardware, es muy limitada y a veces nula.</p>
+
+<p>Para que el sistema y las aplicaciones no se confundan con dos tarjetas de sonido, debes especificar al sistema sobre la tarjeta de sonido que utilizarás. También lo puedes hacer en las configuraciones de tus programas de audio.</p>
+
+<p>En el siguiente ejemplo, vamos a configurar el programa Audacious para que reproduzca audio a través de la tarjeta Audigy 2 SZ.</p>
+
+<ol>
+<li>Abre el programa Audacious y busca en las preferencias del programa con un botón derecho del ratón:</li>
+<li>Se desplegará la ventana de configuración de Audacious. Una vez ahí, selecciona la configuración de sonido:</li>
+<li>Al abrir la pestaña Output Plugin preferences, verás la opción Audio device, ahí selecciona la tarjeta Audigy 2 ZS:</li>
+<li>Y por último en la pestaña Mixer card, selecciona la tarjeta Audigy 2 SZ:</li>
+</ol>
+
+<p>Una vez hecho esto puedes reproducir un audio y éste saldrá a través de la tarjeta Audigy 2 SZ</p>
+
+<p>Si quisieras seleccionar la tarjeta Audigy 2 SZ para una aplicación de registro de audio, deberás seleccionar de la misma manera el dispositivo por el cual quieres que se registre el audio. Por ejemplo, en la aplicación Audacity, vemos en la pestaña de Preferencias, en la configuración de Audio la configuración de Reproducción y Grabación:</p>
+
+<h2><a name="index6h2"></a>Qué es JACk</h2>
+
+<p>JACK es un conjunto de herramientas para conectar dispositivos de audio y MIDI, tanto dispositivos del equipo o hardware (como por ejemplo, una entrada de audio de línea o de micrófono), como dispositivos de software (como Audacity, Ardour, Internet Dj Console, etc.). Puede conectar varias aplicaciones distintas a un dispositivo de audio y también permitirles compartir audio. Sus clientes pueden correr su propio proceso (o sea, aplicaciones normales), o pueden correr con el servidor JACK (como un plugin).</p>
+
+<p><strong>Qué hace JACK</strong></p>
+
+<p>El Kit de Conexión de Audio llamado JACK. Esta herramienta te permite especificar por ejemplo, qué latencia (retardo) vas a manejar (baja o alta), cuántas entradas y cuántas salidas físicas de la tarjeta de audio utilizarás. Además, podrás realizar conexiones entre las aplicaciones, entradas y salidas físicas mediante cables virtuales.</p>
+
+<p>Más gráfico: JACK-Control</p>
+
+<p>JACK-Control es la presentación gráfica del Kit de Conexión de Audio JACK.</p>
+
+<p>JACK Control (qjackctl) te permite centralizar y administrar todas las conexiones, pero los programas en general tienen su propia administración de las conexiones, así que quizá no tengas que preocuparte por eso frecuentemente. La distribución GNU+Linux flujos-vivos ya viene preparada para iniciar JACK automáticamente al cargar el sistema en tu computadora, por lo que es probable que no tengas que modificar nada en las configuraciones de JACK. Sin embargo, es importante conocer su funcionamiento para saber qué hacer en caso de problemas.</p>
+
+<p>Configurar JACK</p>
+
+<p>Para utilizar esta herramienta, es importante lograr una configuración de JACK ideal para tu equipo, eso se logra en base a prueba y error. No hay una receta para esto, todo dependerá de tu computadora, de la tarjeta de audio, del kernel que estés usando. Una buena configuración consiste en lograr la menor latencia posible. Al manejar latencias altas o audibles, escucharás un delay o eco. El tiempo en que tarda en producirse ese eco es la latencia. Una latencia de 92ms sería claramente audible, y provocaría que una grabación quedara retrasada con respecto al resto de las pistas. A veces, unos 23ms de latencia pueden ser aceptables, pero si puedes manejar 1.6ms o menos estarás mucho más tranquilx.</p>
+
+<ol>
+<li>Selecciona el botón Setup verás un cuadro de diálogo con muchas opciones, como este:</li>
+<li>Debemos concentrarnos en los siguientes parámetros:</li>
+</ol>
+
+<p><strong>Tiempo real</strong></p>
+
+<p>Al seleccionar esta opción, le indicas al kernel que las tareas de JACK tendrán la prioridad de tiempo real, es decir que no serán interrumpidas por el kernel y las otras tareas que este debe realizar. Hay sistemas operativos que corren en tiempo real, como Ubuntu Studio. Puedes utilizar también un parche de tiempo real que hace que una aplicación corra en tiempo real, generando algunos cambios en el funcionamiento del kernel. Sólo root puede ejecutar programas con prioridad de tiempo real, si no configuras el sistema para que otros usuarios lo puedan hacer. <em>* Interfaz</em>*</p>
+
+<p>Este campo se refiere a la tarjeta de audio utilizada. Si tienes varias, “hw:0” será la primera tarjeta cargada por el sistema de controladores ALSA, “hw:1” será la segunda, y así sucesivamente. En algunos casos, para determinadas tarjetas de sonido o determinadas funcionalidades, deberás experimentar con otra interfaz distinta a la predeterminada (hw:0).</p>
+
+<p><strong>Audio</strong></p>
+
+<p>Se pone en Duplex para habilitar flujos de audio de entrada y de salida. Sin embargo Duplex no funciona en todos los equipos y puede causar xruns o que no corra JACK.</p>
+
+<p><strong>Cuadros/Período y Períodos/Buffer</strong></p>
+
+<p>La modificación de estos valores se ven reflejados en la latencia (o retardo), la cual se ve en el recuadro inferior derecho de la ventana de configuración. <em>* Frecuencia de muestreo</em>*</p>
+
+<p>Muchos programas funcionarán en la frecuencia de muestreo en Hz definida aquí. Cuanto mayor sea la frecuencia, podrás captar mayor cantidad de frecuencias agudas y los efectos sonoros podrán ser procesados con más calidad, puesto que dispondrás de mayor cantidad de muestras por segundo. Sin embargo, para los programas de transmisión lo más estable va desde 44100 a 48000 Hz. <em>* No bloquear memoria</em>*</p>
+
+<p>Lo mejor es no tener marcada esta opción, así la memoria que usa JACK está bloqueada, y ninguna página de ella puede pasarse al área de intercambio (que es disco duro y por eso es memoria lenta). Esto es para ayudar a garantizar que JACK se ejecute en tiempo real. No todos los usuarios pueden bloquear memoria, root siempre puede, pero hay que hacer algunas cosas para que otros usuarios o grupos de usuarios lo puedan hacer.</p>
+
+<p><strong>Modo tolerante</strong></p>
+
+<p>Si el equipo no tiene suficiente capacidad de procesamiento como para mantener el flujo de audio sin pérdidas (xruns), esta opción hará que JACK trate de mantener las conexiones a toda costa.</p>
+
+<p><strong>Forzar 16 bit</strong> JACK intentará iniciar de forma predeterminada en 32 bit, se le puede forzar a usar 16 bit, pero lo más importante será que esta opción ahorrará espacio en disco/RAM y tiempo de procesamiento de CPU. Esta opción puede ser útil para las computadoras que cuentan con tarjetas antiguas de 16 bits. Para las computadoras nuevas no es conveniente forzar a 16 bits.</p>
+
+<ol>
+<li>Selecciona el botón Start para iniciar JACK.</li>
+</ol>
+
+<p><strong>Revisa los mensajes de JACK</strong></p>
+
+<ol>
+<li><p>Selecciona el botón Messages, si JACK está corriendo bien, se abrirá un cuadro de diálogo como este:</p></li>
+<li><p>Checa en el cuadro de mensajes que no aparezcan xruns.</p></li>
+</ol>
+
+<p>Los xruns causan pérdida de audio; clicks, pops, distorsiones. Si obtienes más de dos o tres en un lapso corto de tiempo, probablemente necesitas afinar JACK un poco. Revisa tus configuraciones de JACK.</p>
+
+<p>Es muy importante evitar xruns. Si encuentras una combinación de parámetros de baja latencia que le permitan al servidor JACK iniciar, pero que producen un desbordamiento de xruns, tu configuración está demasiado alta.</p>
+
+<p>Los xruns también son reportados en el diálogo principal de JACK Control. Idealmente deberías ver esto:</p>
+
+<p>Si, por otro lado, ves algo como esto, tienes un problema:</p>
+
+<p>Estos números rojos te pueden provocar problemas, pero probablemente podrás continuar un poco mientras tus xruns sean pocos y espaciados.</p>
+
+<p><strong>Conexiones con JACk</strong></p>
+
+<ul>
+<li>Selecciona el botón Connect, verás un cuadro de diálogo como éste:</li>
+</ul>
+
+<p>El primer cuadro Readable Clients / Output Ports contiene los puertos de salida, que pueden ser entradas de la tarjeta de sonido (cd, línea, micrófono, más líneas, etc.) y también puertos de salida de programas, por ejemplo si algún programa genera algún sonido. El puerto de donde puedes obtener el sonido que genera estará en este cuadro.</p>
+
+<p>El segundo cuadro muestra las salidas físicas de tu equipo, es decir, las bocinas integradas o alguna bocina externa conectada o audífonos. La señal de cualquier aplicación o cliente que maneje señal de audio, debe estar conectada a estas salidas para que puedas escuchar lo que se esté reproduciendo.</p>
+
+<p>En esta ventana de conexiones de JACK puedes ver las conexiones que existen entre las distintas aplicaciones de audio y las entradas y salidas físicas de tu máquina. La mayoría de las aplicaciones traen ya configurada la administración de las conexiones, por lo que la mayoría de las veces no tendrás que modificarlas. Sin embargo, algunos reproductores como Audacious no se conectan de manera automática, por lo que tendrás que hacerlo de forma manual.</p>
+
+<p>Aquí un ejemplo de cómo se conecta el reproductor Aqualung a las salidas de la tarjeta de audio:</p>
+
+<p>Estas conexiones se pueden manipular manualmente, jalando con el ratón los cables virtuales que se muestran aquí de manera gráfica. También lo puedes hacer, seleccionando los puertos de salida (en el cuadro izquierdo) y los puertos de entrada (en el cuadro derecho) que quieres conectar entre sí. Para terminar el proceso de conexión, selecciona el botón connect (imagen jack13). Así, de manera gráfica podrás ver los cables virtuales conectados entre los puertos elegidos.</p>
+
+<p><strong>Aplicaciones que usan JACk</strong></p>
+
+<p>No todas las aplicaciones requieren de JACK para funcionar, algunas no lo necesitan como el reproductor Listen. Otras, funcionan con y sin JACK, otras tantas sólo corren junto con JACK. Revisa la página http://jackaudio.org/applications para ver la lista completa de las aplicaciones. Aquéllas que tienen estas dos posibilidades requieren ser configuradas para funcionar con JACK. Para saber cómo configurar las aplicaciones que vienen en flujos-vivos, revisa el capítulo correspondiente a la aplicación que te interesa o revisa la página correspondiente al proyecto.</p>
+
+<h2><a name="index7h2"></a>Reproductores de audio libres</h2>
+
+<p>Para todo lo que tiene relación con el trabajo con audio, los reproductores son una herramienta básica y necesaria. Funcionan para reproducir archivos, recibir señales de streaming y reproducir lo que vas a transmitir en un stream. A continuación, encontrarás cuatro ejemplos de reproductores libres incluidos en flujos-vivos, con los que podrás hacer una gran cantidad de tareas:</p>
+
+<p><strong>AUDACIOUS</strong></p>
+
+<p>Es un reproductor muy ligero y sencillo. Es altamente configurable (admite las carátulas del Winamp) y puedes añadirle multitud de complementos disponibles en su página web: http://audacious-media-player.org/</p>
+
+<p>Audacious te permite reproducir pistas, listas de reproducción que también podrás guardar como archivo. Tiene la opción de abrir una URL para recibir una señal de streaming. Además, tiene soporte para conectarse con el servidor JACK.</p>
+
+<p><strong>¿Cómo configurar las preferencias de audio en Audacious con JACK?</strong></p>
+
+<ol>
+<li>Selecciona el cuadrito azul con el botón derecho del ratón, se abrirá el cuadro de diálogo de Audacious y selecciona Preferences: \ Imagen Screenshot</li>
+<li>En la ventana de preferencias, entra a la sección referente al Audio, seleccionando la imagen de una bocina, en la lista del lado izquierdo de esta ventana. En la sección Sistema de Audio (Audio System) es donde se indica la conexión de salida actual (current output plugin), cambia esa opción por JACK Output plugin:</li>
+<li>Cierra esta ventana de diálogo, ahora tu Audacious está listo para comunicar con JACK. Recuerda que a partir de ahora si JACK no está encendido, Audacious no se oirá. Revisa que las conexiones de Audacious, se vean en la ventana de conexiones de JACK Control.</li>
+</ol>
+
+<p>AQUALUNG</p>
+
+<p>Es un reproductor en apariencia muy sencillo que tiene una gran cantidad de posibilidades. Soporta la recepción radio streaming en el formato Ogg Vorbis o MP3. Permite la suscripción a RSS y audio podcast. Soporta los formatos WAV, AIFF, AU, FLAC, Ogg Vorbis y Ogg Speex. Además, tiene soporte para los controlador OSS, ALSA y el servidor JACK.</p>
+
+<p>SONATA</p>
+
+<p>Sonata es un cliente con interfaz gráfica del reproductor Music Player Daemon, soporta la lectura de listas de reproducción, recepción de streams de audio, acceso a tu librería de música.</p>
+
+<p><strong>VLC Media Player</strong></p>
+
+<p>VLC Media Player reproduce casi cualquier formato de audio y video.</p>
+
+<p>La interfaz de VLC Media Player es muy sencilla y se maneja con mucha facilidad. A pesar de esto, también cuenta con opciones avanzadas como el cliente - servicio de streaming para enviar una señal de video por Internet. A lo largo de su desarrollo, el programa se ha ido especializando en la reproducción de video: es posible añadir subtítulos y manejar varias pistas de audio asociadas a una película. Además VLC tiene la capacidad de abrir videos incompletos o con errores que a veces es capaz de reparar.</p>
+
+<p>VLC Media Player soporta los siguientes formatos: 3GP[2], ASF, AVI, FLV, MKV, QuickTime, MP4, Ogg, OGM, WAV, MPEG-2 (ES,PS,TS,PVA,MP3), AIFF, Raw audio, Raw DV, FLAC. En la versión contenida en el LIVE-CD flujos-vivos, viene configurado para que pueda ser ejecutado junto con JACK pero también de manera independiente, ésto de manera automática.</p>
+
+<h3><a name="index13h3"></a>Enlaces</h3>
+
+<p>Unos apuntes sobre el sonido</p>
+
+<p>http://www.ehu.es/acustica/</p>
+
+<p>Kernel</p>
+
+<p>http://www.estrellateyarde.es/so/kernel-linux</p>
+
+<p>http://es.wikipedia.org/wiki/Latencia</p>
+
+<p>http://es.wikipedia.org/wiki/Sistema_operativo_de_tiempo_real</p>
+
+<p>http://linux.about.com/od/commands/a/lxctop01t14.htm</p>
+
+<p><a href="http://es.wikipedia.org/wiki/N%C3%BAcleo_">http://es.wikipedia.org/wiki/NÃºcleo_</a>(inform%C3%A1tica)</p>
+
+<p>http://es.wikipedia.org/wiki/Llamada_al_sistema</p>
+
+<p>http://es.wikipedia.org/wiki/Compilador</p>
+
+<p>ALSA</p>
+
+<p>http://www.alsa-project.org/</p>
+
+<p>http://alsa.opensrc.org/</p>
+
+<p>http://www.estudiolivre.org/tiki-index.php?page=ALSA&amp;bl</p>
+
+<p>http://www.gulcar.org/modules.php?name=Forums&amp;file=viewtopic&amp;p=1830</p>
+
+<p>http://delajusco.wordpress.com/2007/08/11/modprobe/</p>
+
+<p>http://www.gentoo.org/doc/es/alsa-guide.xml</p>
+
+<p>http://es.wikipedia.org/wiki/Advanced_Linux_Sound_Architecture</p>
+
+<p>http://www.alsa-project.org/~valentyn/</p>
+
+<p>http://linux-sound.org/</p>
+
+<p>http://www.digipedia.pl/man/alsaconf.8.html</p>
+
+<p>Tarjeta de audio externa</p>
+
+<p>http://www.alsa-project.org/main/index.php/Matrix:Main</p>
+
+<p>JACK</p>
+
+<p>http://jackaudio.org/</p>
+
+<p>http://es.wikipedia.org/wiki/JACK_Audio_Connection_Kit</p>
+
+<p>http://www.musix.org.ar/</p>
+
+<p>http://packages.debian.org/source/lenny/jack-audio-connection-kit</p>
+
+<p>http://www.linuxpromagazine.com/issues/2006/67/knowing_jack</p>
+
+<p>Reproductores de audio</p>
+
+<p>http://www.estrellateyarde.es/equiv/audio-en-linux</p>
+
+<p>http://manualinux.my-place.us/alsaplayer.html</p>
+
+<p>http://jackaudio.org/applications</p>
+
+</section>
+
+
+
+
+
+</div>
+
+<footer id="footer" class="pagefooter">
+
+<nav id="pageinfo">
+
+
+
+
+<nav id="backlinks">
+Links:
+
+<a href="../">index</a>
+
+
+</nav>
+
+
+
+
+
+
+<div class="pagedate">
+Last edited <time datetime="2010-10-20T01:04:21Z">mar 19 oct 2010 20:04:21 CDT</time>
+<!-- Created <time datetime="2010-10-20T01:04:21Z" pubdate="pubdate">mar 19 oct 2010 20:04:21 CDT</time> -->
+</div>
+
+</nav>
+
+
+<!-- from flujos-vivos -->
+</footer>
+
+</article>
+
+</body>
+</html>

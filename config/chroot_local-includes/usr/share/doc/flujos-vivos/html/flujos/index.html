@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<title>flujos</title>
+
+<link rel="stylesheet" href="../style.css" type="text/css" />
+
+<link rel="stylesheet" href="../local.css" type="text/css" />
+
+
+
+
+
+</head>
+<body>
+
+<article class="page">
+
+<section class="pageheader">
+<header class="header">
+<span>
+<span class="parentlinks">
+
+<a href="../">flujos-vivos</a>/ 
+
+</span>
+<span class="title">
+flujos
+
+</span>
+</span>
+
+</header>
+
+
+<nav class="actions">
+<ul>
+
+
+<li><a href="../recentchanges/">RecentChanges</a></li>
+
+
+
+
+
+
+
+
+</ul>
+</nav>
+
+
+
+
+</section>
+
+
+
+<div id="pagebody">
+
+<section id="content">
+<h1><a name="index1h1"></a>Flujos</h1>
+
+<div class="toc">
+<ol>
+	<li class="L1"><a href="#index1h1">Flujos</a>
+	<ol>
+		<li class="L2"><a href="#index1h2">Qué son Flujos</a>
+		</li>
+		<li class="L2"><a href="#index2h2">Qué necesitas para hacer flujos</a>
+		<ol>
+			<li class="L3"><a href="#index1h3">El lenguaje en el mundo del streaming</a>
+			</li>
+		</ol>
+		</li>
+		<li class="L2"><a href="#index3h2">Flujos con software libre</a>
+		</li>
+		<li class="L2"><a href="#index4h2">Qué es un Live-CD</a>
+		</li>
+	</ol>
+	</li>
+</ol>
+</div>
+
+<h2><a name="index1h2"></a>Qué son Flujos</h2>
+
+<p>Transmitir sonido en el Internet se puede lograr a través de un proceso llamado streaming, que quiere decir mandar flujos. Tiene la gran ventaja que se puede escuchar un flujo de audio (algo como un archivo interminable) mientras se está bajando. De esta manera, se puede transmitir una cápsula musical o hablar por micrófono en una computadora mientras en otro lugar, llega esta transmisión casi en vivo. En realidad, el proceso de streaming no guarda un archivo en la memoria como cuando se trata de una descarga de un audio, sino que se crea una conexión de transmisión de datos. En el momento en el que como usuario uno detiene la reproducción del stream, esta conexión se termina y no se genera un archivo guardado en la memoria. El proceso crea una conexión con un retraso de microsegundos, dependiendo del tamaño de los datos y de la conexión de internet. Con las aplicaciones de streaming, los programas de radio adquieren su inmediatez también en el Internet. Para entender cómo se mandan y reciben estos flujos sonoros, seguiremos el camino que recorre el audio de una computadora a otra. En teoría, cualquier computadora con tarjeta de sonido y acceso a Internet funciona para transmitir sonido. Como fuentes de sonido se puede utilizar tanto reproductores de audio como micrófonos internos o dispositivos externos (ej. mezcladora, micrófono, etc.) conectados a las entradas de audio. El sonido entra en la computadora en forma de señales a través de la tarjeta de sonido, las aplicaciones o programas en el sistema codifican estas señales. También los programas que utilizamos para hacer el stream convierten señales de audio para poder transmitirlo vía Internet. Para lograr eso, estas aplicaciones especiales (clientes) reciben, dividen y envuelven la señal deseada en pequeños paquetes. Este flujo de paquetes sonoros se manda a la dirección de un servidor de audio. Este funciona como una gran oficina de correos donde existen muchas casillas postales (punto de montaje). Una vez que llegan los paquetes a los puntos de montaje del servidor de audio, ya cualquier internauta puede recibir el flujo de estos paquetes con una computadora conectada a la red. Pero para poder hacerlo, tiene que conocer la dirección de la casilla postal por donde llegan los paquetes.</p>
+
+<p>1 Streaming básicofuentes de sonido se puede utilizar tanto reproductores de audio como micrófonos internos o dispositivos externos (ej. mezcladora, micrófono, etc.) conectados a las entradas de audio. El sonido entra en la computadora en forma de señales a través de la tarjeta de sonido, las aplicaciones o programas en el sistema codifican estas señales. También los programas que utilizamos para hacer el stream convierten señales de audio para poder transmitirlo vía Internet. Para lograr eso, estas aplicaciones especiales (clientes) reciben, dividen y envuelven la señal deseada en pequeños paquetes. Este flujo de paquetes sonoros se manda a la dirección de un servidor de audio. Este funciona como una gran oficina de correos donde existen muchas casillas postales (punto de montaje). Una vez que llegan los paquetes a los puntos de montaje del servidor de audio, ya cualquier internauta puede recibir el flujo de estos paquetes con una computadora conectada a la red. Pero para poder hacerlo, tiene que conocer la dirección de la casilla postal por donde llegan los paquetes.</p>
+
+<p>Lo bueno de mandar los paquetes a través de los puntos de montaje de un servidor de audio es que esto permite a más de un internauta recibir los paquetes sonoros. Además, se pueden multiplicar los flujos que salen de un punto de montaje y dependiendo de la potencia de la conexión de red (banda ancha) pueden escucharlo hasta miles de personas. Casi todos los reproductores de audio (dentro del contexto de streaming se vuelven clientes receptores) en los diversos sistemas operativos permiten recibir estos flujos de paquetes sonoros. Una vez especificada la dirección desde donde se puede bajar el flujo constante de paquetes, los reproductores se encargan de desenvolverlos, reconocer su formato de sonido digital, de reensamblarlo y de mandar una señal a la salida de audio de la computadora o a las bocinas integradas.</p>
+
+<p>Revisemos una vez más el flujo sonoro en una gráfica.</p>
+
+<h2><a name="index2h2"></a>Qué necesitas para hacer flujos</h2>
+
+<p>Equipo básico, conexiones y aplicaciones para hacer streaming</p>
+
+<p>Vamos a ver en una lista breve las condiciones básicas para lograr una transmisión de streaming: Necesidades de equipo (hardware): - Una computadora con tarjeta de sonido (interna o externa). - Un micrófono, en el caso que se quiera transmitir la voz. - Audífonos o bocinas para monitorear la señal de salida (no es obligatorio pero muy recomendable). Adicionalmente: una consola y reproductores de audio (en caso de que quieras utilizar la computadora como “transmisor” y manejar el contenido sonoro por separado). Necesidades de conectividad y recursos en la red: - Una conexión de Internet (de preferencia alámbrica para tener más estabilidad). - Acceso a un servidor de audio y en éste, un punto de montaje (ver la siguiente sección y el minimanual Dónde obtener una URL en el servidor libre de audio Giss.tv para aprender sobre estos recursos). Necesidades de aplicaciones (software): - Un programa de cliente para mandar el stream (ej. Internet DJ Console) o plug-ins, también llamados extensiones para un reproductor de audio que habilita estos para transmitir audios. En este Live-CD encontrarás varios clientes para hacer streaming. Suponiendo que cuentas con el equipo básico y una conexión, lo único que te falta para empezar es el acceso a un servidor de audio. Como hemos dicho antes, en Giss.tv puedes abrir tu punto de montaje que corresponde a una dirección (URL) para mandar un stream de audio. Si te urge transmitir, abre tu punto de montaje en Giss.tv y luego ve al capítulo Herramientas para hacer streaming para lanzar tu primer stream. Para aquellxs que quieren conocer un poco más sobre los términos claves del mundo del streaming y la práctica de streaming con software libre, lxs invitamos a seguir en este capítulo.</p>
+
+<h3><a name="index1h3"></a>El lenguaje en el mundo del streaming</h3>
+
+<p>El abrir un espacio (punto de montaje) en un servidor de audio para obtener una dirección de streaming o configurando el programa cliente, no sólo consiste en dar nombre a tu creación sonora sino también en definir algunos valores básicos que determinarán la calidad de tu transmisión. Independientemente del servidor de audio o del software que utilices, las configuraciones básicas son las mismas. Conocerlos mejor te permitirá moverte de un manera más ágil e independiente en el mundo del streaming. Para comprender una dirección de streaming, analizaremos los elementos que la componen. Nuestro ejemplo es: http://giss.tv:8000/flujos.ogg</p>
+
+<h4><a name="index1h4"></a>http://</h4>
+
+<p>…indica que se trata de un protocolo, es decir, un conjunto de reglas usadas por computadoras para comunicarse unas con otras a través de una red. <strong>http</strong> es el protocolo estándar para todos los procesos en red que se organizan por una relación "servidor-cliente". Así, las transmisiones de streaming que se realizan a través de servidores de audio y clientes de transmisión y recepción, recurren a este tipo de protocolos – lo cual se refleja también en la dirección de streaming.</p>
+
+<h4><a name="index2h4"></a>giss.tv</h4>
+
+<p>…es el nombre del servidor de audio por donde se sube y gestiona la señal de las transmisiones y donde la gente que escucha baja la señal. Es comparable a una estación de radio en AM o FM, un lugar donde se puede transmitir varias frecuencias que en el caso de radio web corresponden a direcciones específicas, URLs organizados por puertos y puntos de montajes.</p>
+
+<h4><a name="index3h4"></a>:8000</h4>
+
+<p>…es el número de puertos por los cuales pasan las señales de audio. Son una característica de la gestión del sonido en los servidores de audio o, dicho de otro modo, son un elemento que hacen de un servidor normal, un servidor de audio. Hay otros puertos además del puerto 8000, por ejemplo hay radios que transmiten por 8100 (Radio Bemba) u 8084 (Ollinkan Radio). Es más bien una decisión que toman lxs programadorxs y administradorxs del servidor. El puerto 8000 es el más utilizado y el más común para transmisiones de audio, por eso es el puerto estándar de radio web. Puede haber más de un stream por un puerto al mismo tiempo. Sin embargo hay un límite de capacidad que dependerá de la configuración y la conectividad (ancho de banda) de un servidor. Si hay demasiada gente intentando pasar su flujo de audio por el mismo puerto, puede saturarse y provocar cortes en las transmisiones o impedir la conexión.</p>
+
+<h4><a name="index4h4"></a>/flujos.ogg</h4>
+
+<p>…es el punto de montaje que también podríamos llamar el nombre de un stream. Nos permite distinguir las diversas transmisiones que se realizan a través del mismo servidor. A diferencia de los puertos, un punto de montaje siempre corresponde a un stream único. Es muy común que el nombre de un punto de montaje contenga también información sobre el formato digital de audio que se utiliza para transmitir. En este caso el formato se llama .ogg, es decir, un formato libre de audio. Otro formato muy conocido es .mp3. No todos los servidores de audio exigen definir el formato al final del nombre, sin embargo, es una información importante para la gente que quiere conectarse, ya que requerirán de un reproductor que pueda leer el tipo de formato. También podemos encontrar un stream con terminación como .m3u o .pls. Estas se refieren a formatos de contenedores que envuelven el propio formato de audio. En la práctica permiten que una dirección de streaming se abra directamente en un reproductor de audio con capacidades de tocar streams. Para conocer más sobre este punto, revisa el capítulo Cómo hacer sonar tú página web.</p>
+
+<p>Un último comentario sobre las direcciones de streaming. Aquí estamos analizando el nombre “humanizado” de una URL, es decir un representación no-numérica. De igual manera puedes encontrarte con una dirección de streaming compuesta de números (la IP). Un ejemplo: 193.41.7.38, es la representación numérica de la dirección de streaming de radio La Tribu. Al configurar un cliente de streaming tendrás que incluir la información de la dirección (nombre del servidor, puerto, punto de montaje y una contraseña), también configurar la calidad del stream. Aunque las interfaces gráficas varían, los pasos son más o menos los mismos. Aquí vienen las opciones más importantes para mejorar tu stream:</p>
+
+<h4><a name="index5h4"></a>Bitrate (velocidad binaria)</h4>
+
+<p>El bitrate de 128bps (bits transmitidos por segundo) suele ser el valor predeterminado de muchas aplicaciones de audio digital, entre ellas están también los clientes de streaming. Al modificarlo, la calidad del stream se verá afectada. 128bps es una transmisión de alta calidad que necesita conexiones de alta velocidad (ej. DSL) para transmitir y recibir un stream. Por eso, para quien cuenta con computadoras y conexiones menos sofisticadas, conviene bajar el valor del bitrate y así oír el stream sin interrupciones. Una velocidad binaria de 54bps es un buen acuerdo, porque finalmente es como un compromiso entre un acceso amplio y una calidad de sonido atractiva. La voz humana se puede transmitir con 36bps, pero una pista de música se escucha mal (pixeleado) a un nivel tan bajo. Entonces, hay que experimentar un poco para que alguien conectado a tu stream monitoree críticamente la calidad de transmisión.</p>
+
+<h4><a name="index6h4"></a>Quality (calidad)</h4>
+
+<p>Algunos clientes dan la posibilidad de modificar la calidad del stream en una escala de 0 a 10. Esa opción corresponde al formato de audio Ogg/Vobis que vamos a utilizar para transmitir. Conviene cambiar la calidad en relación al bitrate, porque eso es una función común en todos los programas.</p>
+
+<h4><a name="index7h4"></a>Samplerate (frecuencia de muestreo)</h4>
+
+<p>La frecuencia de muestreo nos da una idea sobre la complejidad de la señal. El samplerate es la frecuencia a la cual una señal es leída. Una frecuencia común es 44100 Hz que corresponde a una calidad de Hi-Fi . La frecuencia de muestra preconfigurada del servidor JACK es 48000 Hz. Se puede bajar la frecuencia de muestreo para producir una señal menos compleja y por eso menos difícil de leer. Siempre hay que experimentar y monitorear esos cambios para evitar distorsiones de sonido.</p>
+
+<h4><a name="index8h4"></a>Channels (canales mono/estéreo)</h4>
+
+<p>Aquí decides si quieres transmitir en mono (un canal) o en estéreo (dos canales), ya que ésto afectará la calidad del stream. La decisión de transmitir en mono o estéreo depende del contenido y la intención estética del stream (voz/música).</p>
+
+<h4><a name="index9h4"></a>Encoder Type (tipo de codificador)</h4>
+
+<p>Funciona para elegir el formato de audio en el cual se transmitirá. Conviene utilizar el formato Ogg/Vobis, porque una transmisión en .ogg a un bitrate considerablemente bajo (ej. 48bps) suena bastante mejor que una transmisión en .mp3 usando el mismo bitrate. Hay que cuidar que el tipo de codificador corresponda a la configuración de su punto de montaje (en Giss.tv esto se define al momento de decidir el nombre de tu stream y de elegir entre .ogg y .mp3).</p>
+
+<h4><a name="index10h4"></a>Server Type (tipo de servidor)</h4>
+
+<p>Los tipos de servidor para streaming son variados. Los más comunes son icecast2 (software libre) y shoutcast (licencia comercial). En el caso de Giss.tv el servidor es icecast2. Siempre hay que asegurarse del tipo de servidor antes de transmitir.</p>
+
+<h4><a name="index11h4"></a>Encoder Password (clave)</h4>
+
+<p>La contraseña funciona (como siempre) para reglamentar y accesar al uso de tu stream. Reconnected Seconds (segundos de reconexión) Un último detalle que determina en cuántos segundos un stream interrumpido se vuelve a conectar. Diez segundos (el valor por defecto en muchos casos) es mucho tiempo, conviene cambiar ese valor a tres segundos.</p>
+
+<h4><a name="index12h4"></a>Ejemplos</h4>
+
+<p>un ejemplo con oggfwd:
+  oggfwd -p -n "Test radio" radio.example.com 8000 password /stream.ogg</p>
+
+<p><span class="createlink">http://wiki.flujos.org/fv:manual:aplicaciones#configurar el servidor de audio en idjc</span> | <span class="createlink">http://wiki.flujos.org/fv:manual:aplicaciones#la hoja de configuracion de darkice</span></p>
+
+<h2><a name="index3h2"></a>Flujos con software libre</h2>
+
+<p>Para servidores de audio, como en el caso de clientes de transmisión de streaming, existen soluciones tecnológicas de tipo comercial o de tipo libre. El Software libre es más que programas gratuitos. En síntesis, software libre es la expresión de un trabajo colaborativo y participativo, un intercambio de saberes de programación e ideas creativas. Software libre es una invitación a conocer mejor y a mejorar entre todxs las herramientas con las cuales trabajamos en computadoras y en la red. Por eso los programas de software libre se caracterizan por ser de código de fuente abierto (quiere decir que se puede ver y cambiar el código de su programación) y por estar protegidos también por licencias (ej. GPL). Las licencias no están orientadas a comercializar los saberes y soluciones tecnológicas sino para garantizar su libre circulación y apropiación. En el mundo del streaming hay muchas soluciones para transmitir de manera gratuita con programas que se pueden bajar sin costo (ej. Winamp/Edcast), pero que no están abiertos para seguir desarrollándose dentro de una comunidad. Radio.flujos.org trabaja bajo la premisa de romper con este modo de producción y distribución. Por eso no sólo promovemos el uso de software libre para hacer streaming, también creamos manuales y herramientas para ponerlo al alcance de todxs. Una particularidad de estos clientes de streaming que son software libre es que sólo son compatibles con las distribuciones de Linux, no con sistemas operativos propietarios. Su instalación no es lo más fácil para alguien que nunca ha instalado un sistema operativo completo, aunque se ha vuelto mucho más accesible en los últimos años. Para no complicar tanto el primer paso para acercarse al streaming con software libre, hemos pensado en crear una distribución en un CD que viene con varios clientes para hacer streaming y que funciona con tu computadora sin ndisco duro o CD ROM.</p>
+
+<h2><a name="index4h2"></a>Qué es un Live-CD</h2>
+
+<p>Una distribución live o Live CD o Live DVD, más genéricamente Live Distro, (traducido en ocasiones como CD vivo o CD autónomo), es un sistema operativo (normalmente acompañado de un conjunto de aplicaciones) almacenado en un medio extraíble, tradicionalmente un CD o un DVD (de ahí sus nombres). Puede ejecutarse desde éste sin necesidad de instalarlo en el disco duro de una computadora, para lo cual usa la memoria RAM como disco duro virtual y el propio medio como sistema de archivos. Para usar un Live CD es necesario obtener uno (muchos de ellos distribuyen libremente una imagen ISO que puede bajarse de Internet y grabarse en disco) y configurar la computadora para que arranque desde la unidad lectora, reiniciando luego la computadora con el disco en el lector, con lo que el Live CD se iniciará automáticamente. Al arrancar la computadora con el CD en el lector de discos, el sistema reconoce todo el hardware (equipamiento) automáticamente y muestra un sistema operativo listo para usar. Flujos-vivos live-cd Este Live-CD flujos-vivos es un sistema operativo integrado completamente por Software Libre en base a la distribución Debian y está orientado a la publicación y transmisión de audio en la red. Dispone de diversas aplicaciones que lo hacen adecuado a cualquier tipo de tareas relacionadas con el audio y el Internet, desde navegar por Internet o usar mensajería instantánea, editar audio, convertir formatos de audio, extraer audio de un disco compacto y, por supuesto, hacer streaming. Una de las principales características de un live-cd es que el sistema está preparado para ser utilizado directamente desde el CD, sin necesidad de realizar ninguna instalación o modificar los datos del disco duro de tu computadora. Al arrancar la computadora con el CD en el lector de discos, el sistema reconoce todo el hardware (equipamiento) automáticamente y muestra un sistema listo para usar que está contenido en el live-cd. flujos-vivos contiene decenas de programas y un manual de usuario que te permitirá comprenderlos y utilizarlos. A continuación encontrarás el listado de las aplicaciones incluidas en el disco: Gráficos Editor de gráficos vectoriales Inkspace Programa de Manipulación de imágenes de GNU</p>
+
+<p>Internet Claws Mail Cliente BitTorrent Transmission Cliente de mensajeria de Internet Pidgin Darkice FileZilla FTP client gFTP Internet DJ Console Navegador web Iceweasel Nicotine-Plus Wicd Network Manager Multimedia Aqualung, reproductor de audio Ardour GTK2, secuenciador multipista profesional Audacious, reproductor de audio Audacity, , editor de audio multicanal Control de volumen Conversor de Sonido ecawave Extractor de sonido de CD GNUsound Grabador de sonido JACK Control JACK Timemachine JAckEQ JAMin Listen Music Player, reproductor de audio Music Player Daemon Serpentine Audio CD Creator Sonata VLC media player Cómo obtener una versión del live-cd flujos-vivos - Baja la imagen ISO de la página http://radio.flujos.org - Quema la imagen ISO como Live-CD. Es importante elegir la opción “Quemar Imagen ISO” o algo parecido en tu programa para quemar discos. Luego introduce un disco virgen en tu quemador de discos. Después de unos minutos tendrás en tus manos tu copia de flujos-vivos.</p>
+
+<p>Correr el Live-CD En PC: La mayoría de las computadoras PC reconocen y cargan de manera automática un live-cd que se encuentre en la unidad de disco. Sin embargo, hay algunos modelos que no lo hacen de manera automática, en este caso, tienes que entrar al menú de arranque inmediatamente después del encendido de tu equipo con las teclas F9, F12 (está escrita en la parte de abajo de la pantalla un par de segundos donde dice BOOT); y manualmente iniciar el arranque del Live-CD o de una vez cambiar el orden de procesos de arranque, poniendo el reproductor de discos (DISK DRIVE) en primer lugar. En Macintosh. (Este disco no es compatible con las computadoras PowerPC, pero sí con Intel): Reinicia con el disco dentro de la unidad y presiona largamente la tecla option o alt. En la pantalla te aparecerán dos iconos, el de tu disco duro y un cd, selecciona el cd. Cargar el sistema del disco Una vez arrancado el disco, selecciona la primera opción que se refiere a utilizar el cd en vivo, Start Debian Live y pulsa la tecla Enter para cargar el sistema. Este proceso puede tardar un poco de tiempo, pero en unos minutos tendrás en tu computadora un sistema listo para usar 100% Software Libre. flujos-vivos está dirigido a una comunidad de usuarios en español, accesible a cualquiera que tenga inquietudes y/o ganas de transmitir y compartir audio por Internet. La comunicación se realiza mediante un foro, listas de correo y chats. Para más información visita http://radio.flujos.org.</p>
+
+<p>Enlaces http://es.wikipedia.org/wiki/Streaming http://biblioweb.sindominio.net/pensamiento/softlibre/ http://es.wikipedia.org/wiki/GNU/Linux http://www.gnu.org/philosophy/free-sw.es.html http://www.vorbis.com/ http://audacity.sourceforge.net/ http://ardour.org/</p>
+
+</section>
+
+
+
+
+
+</div>
+
+<footer id="footer" class="pagefooter">
+
+<nav id="pageinfo">
+
+
+
+
+<nav id="backlinks">
+Links:
+
+<a href="../">index</a>
+
+
+</nav>
+
+
+
+
+
+
+<div class="pagedate">
+Last edited <time datetime="2010-10-20T01:04:21Z">mar 19 oct 2010 20:04:21 CDT</time>
+<!-- Created <time datetime="2010-10-20T01:04:21Z" pubdate="pubdate">mar 19 oct 2010 20:04:21 CDT</time> -->
+</div>
+
+</nav>
+
+
+<!-- from flujos-vivos -->
+</footer>
+
+</article>
+
+</body>
+</html>
