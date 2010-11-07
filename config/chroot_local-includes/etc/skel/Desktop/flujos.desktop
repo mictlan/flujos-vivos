@@ -4,5 +4,5 @@ Encoding=UTF-8
 Type=Link
 Name=Flujos.org
 Comment=Visita el sitio radio.flujos.org
-Icon=gnome-fs-bookmark
+Icon=web-browser
 URL=http://flujos.org
