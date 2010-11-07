@@ -1,0 +1,28 @@
+[Manual]
+row=1
+col=1
+
+[Flujos.org]
+row=4
+col=0
+
+[ejemplos de configuracion de darkice]
+row=0
+col=1
+
+[flujos-vivos]
+row=3
+col=0
+
+[Papelera]
+row=2
+col=0
+
+[Sistema de archivos]
+row=1
+col=0
+
+[Carpeta personal]
+row=0
+col=0
+
