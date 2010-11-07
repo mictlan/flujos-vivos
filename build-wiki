@@ -4,7 +4,9 @@ OD=$(pwd)
 
 # actualizar fuente
 echo actualizando fuente de manual
-cd /home/kev/.usr/src/flujos/manual; git pull; cd ${OD}
+cd /home/kev/.usr/src/flujos/manual
+sudo -u kev git pull
+cd ${OD}
 
 echo  'clonando manual de flujos.org'
 cd wiki/
