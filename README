@@ -2,8 +2,8 @@ Configuracion Flujos-Vivos
 
 para utilizarlo:
 
-1. git clone git://github.com/mictlan/flujos-lives.git 
-2. cd flujos-lives
+1. git clone git://github.com/mictlan/flujos-vivos.git 
+2. cd flujos-vivos
 3. lh config
 4. sudo lh build
 
