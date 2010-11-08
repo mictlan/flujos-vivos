@@ -1,6 +1,6 @@
 #!/bin/sh
 
-DIRS="usb-hdd iso-cdrom net squashfs"
+DIRS="usb-hdd iso-hybrid net squashfs"
 
 for dir in ${DIRS}
 do 
