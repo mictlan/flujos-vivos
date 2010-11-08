@@ -1,5 +1,5 @@
 #!/bin/sh -e
-set -x
+
 # Static variables
 DISTRIBUTIONS="squeeze"
 FLAVOURS="-flujos"
