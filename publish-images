@@ -1,12 +1,11 @@
 #!/bin/sh 
-set -x
 DEST="/var/www/live/"
 VER=1.1a
 URLS="http://flujos.org/fv/download http://live.acervo.org"
 CHKSUM=md5sum
 DIRS="iso-hybrid net squashfs"
 FNAME="flujos-vivos-$VER-squeeze-i386"
-CHANGELOG="git log --raw --date=iso --pretty=short"
+#CHANGELOG="git log --raw --date=iso --pretty=short"
 # ${FNAME##*.} get extension
 
 # build extra download methods
