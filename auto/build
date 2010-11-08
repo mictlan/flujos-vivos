@@ -29,6 +29,8 @@ genBinary ()
             rm -rf cache/stages_rootfs 
             echo "Build ${FNAME}"
             lb config -b ${TYPE}
+            # build the wiki
+            ./build-wiki 2>&1 | tee build-wiki.log
             lb build noauto ${@} 2>&1 | tee ${FNAME}.log
             echo "copying to ${FNAME}"
             if [ ! -d ${DNAME} ]; then
