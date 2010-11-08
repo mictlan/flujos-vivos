@@ -1,11 +1,11 @@
 #!/bin/sh
 
-DIRS="usb-hdd iso-hybrid net squashfs"
-
-for dir in ${DIRS}
-do 
-    rm -rf ${dir}
-done
+#DIRS="iso-hybrid net squashfs"
+#
+#for dir in ${DIRS}
+#do 
+#    rm -rf ${dir}
+#done
 
 lb clean noauto --all ${@}
 
