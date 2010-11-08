@@ -31,6 +31,7 @@ lb config noauto \
 	--mirror-binary-security ${MIRROR_BINARY_SECURITY} \
     --mirror-debian-installer ${MIRROR_DEBIAN} \
     --security false \
+    --apt-recommends true \
     --linux-flavours 486 \
     --hooks "rm_from_init_d.sh mpd_per.sh" \
     --language es \
