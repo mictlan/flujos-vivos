@@ -1,14 +1,22 @@
 Configuracion Flujos-Vivos
 
-para utilizarlo:
+Flujos-vivos es una herramienta para hacer radio en línea con software libre. Es un versión live (vivo) de Debian/GNU linux hecha con live-build y orientada hacia radialistas en América Latina. El enfoque es la transmisión de audio por internet, pero esta en la mirada la automatizacion de cabina entre otros possibilidades y pues da por mucho mas. Contenga un extesa manual bajo desarrollo constante que si encuentra en el espacio web y en el escritorio de la sistema vivo. 
+
+http://radio.flujos.org
+
+para combiliar el imagen de flujos-vivos:
 
 1. git clone git://github.com/mictlan/flujos-vivos.git 
 2. cd flujos-vivos
 3. lb config
 4. sudo lb build
 
-y para probar el disco:
+eso te dará los imagenes tales como son compilados en el web
+ademas existe el script "test-build" para unicamente compilar el imagen 
+hybrido para usb o cdrom. 
 
-6. qemu -m 512 -cdrom binary.iso -redir tcp:2222::22 -soundhw all
+para probar el imagen sin tener que quemar o instalar a usb:
+
+5. qemu -m 512 -cdrom binary-hybrid.iso -redir tcp:2222::22 -soundhw all
 
 

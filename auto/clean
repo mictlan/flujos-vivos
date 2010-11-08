@@ -2,6 +2,11 @@
 
 DIRS="usb-hdd iso-cdrom net squashfs"
 
+for dir in ${DIRS}
+do 
+    rm -rf ${dir}
+done
+
 lb clean noauto --all ${@}
 
 rm -f *.log

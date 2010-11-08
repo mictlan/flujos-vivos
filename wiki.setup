@@ -88,7 +88,7 @@ use IkiWiki::Setup::Standard {
 	allow_symlinks_before_srcdir => 0,
 
     # rcs backend to use
-    git_wrapper => '/home/kev/.usr/src/flujos-wiki/.git/hooks/pre-commit',
+    git_wrapper => 'wiki/src/flujos-wiki/.git/hooks/pre-commit',
     # for not pushing upstream in preview mode
     gitorigin_branch => "",
     gitmaster_branch => "master",
@@ -310,5 +310,5 @@ use IkiWiki::Setup::Standard {
 
 	# underlay plugin
 	# extra underlay directories to add
-	#add_underlays => [qw{/home/kev/wiki.underlay}],
+	#add_underlays => [qw{/home/radio/wiki.underlay}],
 }
