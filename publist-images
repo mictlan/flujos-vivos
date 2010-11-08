@@ -1,10 +1,11 @@
 #!/bin/sh 
+set -x
 DEST="/var/www/live/"
-VER=${FV_VERSION}
-URLS="http://live.flujos.org http://live.acervo.org"
+VER=1.1a
+URLS="http://flujos.org/fv/download http://live.acervo.org"
 CHKSUM=md5sum
-DIRS="usb-hdd iso-cdrom net squashfs"
-FNAME="flujos-vivos-$VER-lenny-i386"
+DIRS="iso-hybrid net squashfs"
+FNAME="flujos-vivos-$VER-squeeze-i386"
 CHANGELOG="git log --raw --date=iso --pretty=short"
 # ${FNAME##*.} get extension
 
@@ -15,25 +16,17 @@ do
     if [ -d $dir ]; then
         cd $dir
         case ${dir} in
-          iso-cdrom)
+          iso-hybrid)
               zsyncmake ${FNAME}.iso -u $(echo $URLS | awk '{ print $1}')/${dir}/${FNAME}.iso -u $(echo $URLS |awk '{ print $2}')/${dir}/${FNAME}.iso
               ${CHKSUM} ${FNAME}.iso > ${FNAME}.iso.${CHKSUM}
-              ${CHANGELOG} > ${FNAME}.iso.changelog
           ;;
-          usb-hdd)
-              zsyncmake ${FNAME}.img -u $(echo $URLS | awk '{ print $1}')/${dir}/${FNAME}.img -u $(echo $URLS |awk '{ print $2}')/${dir}/${FNAME}.img
-              ${CHKSUM} ${FNAME}.img > ${FNAME}.img.${CHKSUM}
-              ${CHANGELOG} > ${FNAME}.img.changelog
-           ;;
           squashfs)
               zsyncmake ${FNAME}.squashfs -u $(echo $URLS | awk '{ print $1}')/${dir}/${FNAME}.squashfs -u $(echo $URLS |awk '{ print $2}')/${dir}/${FNAME}.squashfs
               ${CHKSUM} ${FNAME}.squashfs > ${FNAME}.squashfs.${CHKSUM}
-              ${CHANGELOG} > ${FNAME}.squashfs.changelog
            ;;
           net)
               zsyncmake ${FNAME}-net.tar.gz -u $(echo $URLS | awk '{ print $1}')/${dir}/${FNAME}-net.tar.gz -u $(echo $URLS |awk '{ print $2}')/${dir}/${FNAME}-net.tar.gz -b 2048
               ${CHKSUM} ${FNAME}-net.tar.gz > ${FNAME}-net.tar.gz.${CHKSUM}
-              ${CHANGELOG} > ${FNAME}-net.tar.gz.changelog
            ;;
          esac
          cd ../
